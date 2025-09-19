@@ -7,3 +7,4 @@ const PrincipalComponent = () => {
 }
 
 export default PrincipalComponent;
+
