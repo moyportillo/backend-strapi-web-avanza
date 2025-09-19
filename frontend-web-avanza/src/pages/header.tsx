@@ -9,7 +9,7 @@ const Header = () => {
                     <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
                         <span className="text-primary-foreground font-bold text-lg">F</span>
                     </div>
-                    <span className="font-bold text-xl">FinanceHub</span>
+                    <span className="font-bold text-4xl">FinanceHub</span>
                 </Link>
 
                 <nav className="hidden md:flex items-center space-x-6">
