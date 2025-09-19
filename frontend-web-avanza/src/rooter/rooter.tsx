@@ -1,6 +1,6 @@
-import Root from "../root.tsx";
+import Root from '@/root';
 import {createBrowserRouter, Navigate} from "react-router-dom";
-import PrincipalComponent from "../pages/principal.tsx";
+import PrincipalComponent from '@/pages/principal';
 
 export const router = createBrowserRouter([
     {
