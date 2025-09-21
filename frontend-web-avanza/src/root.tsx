@@ -5,7 +5,7 @@ const Root = () => {
     return (
         <MainComponent>
             <Outlet />
-            </MainComponent>
+        </MainComponent>
     );
 };
 

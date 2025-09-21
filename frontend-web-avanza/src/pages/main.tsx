@@ -6,7 +6,11 @@ interface Props {
 }
 
 const MainComponent = ({ children }: Props) => {
-    return <section><Header/></section>;
+    return (
+        <section>
+            <Header/>
+            {children}
+        </section>);
 };
 
 export default MainComponent;
