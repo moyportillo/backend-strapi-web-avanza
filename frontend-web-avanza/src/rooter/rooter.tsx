@@ -1,6 +1,8 @@
 import Root from '@/root';
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import PrincipalComponent from '@/pages/principal';
+import BienesRaicesPage from '@/pages/raices';
+import PrestamosPage from '@/pages/prestamos';
 
 export const router = createBrowserRouter([
     {
@@ -9,8 +11,8 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <Navigate to="home" /> }, // Redirección al home
             { path: 'home', element: <PrincipalComponent /> },
-            //{ path: 'pagina1', element: <Pagina1 /> },
-            //{ path: 'pagina2', element: <Pagina2 /> },
+            { path: 'bienes-raices', element: <BienesRaicesPage /> },
+            { path: 'prestamos', element: <PrestamosPage /> },
             { path: '*', element: <Navigate to="home" /> }, // catch-all
         ],
     },

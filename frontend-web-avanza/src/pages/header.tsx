@@ -7,9 +7,9 @@ const Header = () => {
             <div className="container flex h-16 items-center justify-between">
                 <Link to="/public" className="flex items-center space-x-2">
                     <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                        <span className="text-primary-foreground font-bold text-lg">F</span>
+                        <span className="text-primary-foreground font-bold text-lg">A</span>
                     </div>
-                    <span className="font-bold text-4xl">FinanceHub</span>
+                    <span className="font-bold text-4xl">AVANZA HN</span>
                 </Link>
 
                 <nav className="hidden md:flex items-center space-x-6">
