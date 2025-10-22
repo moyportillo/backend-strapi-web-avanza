@@ -93,7 +93,7 @@ const BienesRaicesPage = () => {
                     <div className="container max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Encuentra tu
-                            <span className="text-accent block">Hogar Ideal</span>
+                            <span className="text-accent block text-green-800">Hogar Ideal</span>
                         </h1>
                         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                             Explora nuestra selección de propiedades premium en las mejores ubicaciones. Desde casas familiares hasta
