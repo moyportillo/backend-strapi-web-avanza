@@ -8,11 +8,11 @@ const PrincipalComponent = () => {
         <div className="min-h-screen flex flex-col">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+                <section className="min-h-screen py-20 px-4 bg-gradient-to-b from-background to-muted/20 bg-[url('src/assets/img/principal.jpg')] bg-cover bg-center bg-no-repeat">
                     <div className="container max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
                             Tu Futuro Financiero
-                            <span className="text-accent block">Comienza Aquí</span>
+                            <span className="text-accent text-orange-700 block">Comienza Aquí</span>
                         </h1>
                         <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
                             Descubre las mejores oportunidades en bienes raíces y obtén los préstamos que necesitas para hacer
@@ -46,7 +46,7 @@ const PrincipalComponent = () => {
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20">
+                            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20 bg-[url('src/assets/img/keys.jpg')] bg-cover">
                                 <CardHeader className="text-center pb-4">
                                     <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
                                         <Home className="h-8 w-8 text-accent" />
@@ -68,7 +68,7 @@ const PrincipalComponent = () => {
                                 </CardContent>
                             </Card>
 
-                            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20">
+                            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20 bg-[url('src/assets/img/money.jpg')] bg-cover">
                                 <CardHeader className="text-center pb-4">
                                     <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
                                         <DollarSign className="h-8 w-8 text-accent" />

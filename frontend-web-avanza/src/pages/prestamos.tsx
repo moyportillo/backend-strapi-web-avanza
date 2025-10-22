@@ -89,7 +89,7 @@ const PrestamosPage = () => {
                     <div className="container max-w-4xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                             Préstamos que{" "}
-                            <span className="text-accent block">Hacen Realidad tus Sueños</span>
+                            <span className="text-accent block text-blue-900">Hacen Realidad tus Sueños</span>
                         </h1>
                         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                             Obtén el financiamiento que necesitas con tasas competitivas, procesos rápidos y
