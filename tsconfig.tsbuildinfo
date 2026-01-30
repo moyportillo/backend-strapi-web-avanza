@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/root.tsx","./src/vite-env.d.ts","./src/components/ui/badge.tsx","./src/components/ui/button.tsx","./src/components/ui/card.tsx","./src/lib/utils.ts","./src/pages/header.tsx","./src/pages/main.tsx","./src/pages/prestamos.tsx","./src/pages/principal.tsx","./src/pages/raices.tsx","./src/rooter/rooter.tsx"],"version":"5.8.3"}
