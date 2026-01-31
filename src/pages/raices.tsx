@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Bed, Bath, Square, Heart, Phone, ChevronLeft, ChevronRight, Home, MapPinned } from "lucide-react"
+import { MapPin, Bed, Bath, Square, Heart, Building, ChevronLeft, ChevronRight, Home } from "lucide-react"
 import { useState } from "react"
 
 type Property = {
@@ -12,7 +12,7 @@ type Property = {
     bedrooms?: number
     bathrooms?: number
     area: string
-    type: "Casa" | "Terreno"
+    type: "Casa" | "Terreno" | "Alquiler"
     description: string
     images: string[]
 }
@@ -103,6 +103,22 @@ const properties: Property[] = [
         bathrooms: 4,
         area: "350 m²",
         type: "Casa",
+        description: "Casa de alto nivel con vistas espectaculares a la ciudad, piscina infinita y acabados de primera calidad.",
+        images: [
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+            "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+        ],
+    },
+    {
+        id: 7,
+        title: "Renta de Casa",
+        price: "$650,000",
+        location: "Las Colinas, Tegucigalpa",
+        bedrooms: 5,
+        bathrooms: 4,
+        area: "350 m²",
+        type: "Alquiler",
         description: "Casa de alto nivel con vistas espectaculares a la ciudad, piscina infinita y acabados de primera calidad.",
         images: [
             "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
@@ -253,7 +269,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
 }
 
 const BienesRaicesPage = () => {
-    const [filter, setFilter] = useState<"Todas" | "Casa" | "Terreno">("Todas")
+    const [filter, setFilter] = useState<"Todas" | "Casa" | "Terreno" | "Alquiler">("Todas")
 
     const filteredProperties = properties.filter(property => {
         if (filter === "Todas") return true
@@ -346,20 +362,6 @@ const BienesRaicesPage = () => {
                         <p className="text-xl md:text-2xl text-avanza-navy/70 mb-10 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animate-delay-100 font-medium">
                             Explora nuestra selección de propiedades premium en las mejores ubicaciones de Honduras.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animate-delay-200">
-                            <Button size="lg" className="text-lg px-10 py-6 bg-avanza-navy hover:bg-avanza-navy/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all">
-                                <Phone className="mr-2 h-5 w-5" />
-                                Contactar Asesor
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="text-lg px-10 py-6 border-2 border-avanza-gold text-avanza-navy hover:bg-avanza-gold hover:text-white font-semibold shadow-lg hover:shadow-xl transition-all"
-                            >
-                                <MapPinned className="mr-2 h-5 w-5" />
-                                Agendar Visita
-                            </Button>
-                        </div>
                     </div>
                 </section>
 
@@ -414,6 +416,18 @@ const BienesRaicesPage = () => {
                                     <MapPin className="mr-2 h-4 w-4" />
                                     Terrenos
                                 </Button>
+                                <Button
+                                    onClick={() => setFilter("Alquiler")}
+                                    variant={filter === "Alquiler" ? "default" : "outline"}
+                                    className={`font-semibold transition-all ${
+                                        filter === "Alquiler"
+                                            ? "bg-avanza-navy text-white hover:bg-avanza-navy/90"
+                                            : "border-2 border-avanza-navy/30 text-avanza-navy hover:border-avanza-navy hover:bg-avanza-navy/5"
+                                    }`}
+                                >
+                                    <Building className="mr-2 h-4 w-4" />
+                                    Alquiler
+                                </Button>
                             </div>
                         </div>
 
@@ -458,7 +472,7 @@ const BienesRaicesPage = () => {
                                 },
                                 {
                                     title: "Renta",
-                                    description: "Administramos tu propiedad y encontramos inquilinos ideales"
+                                    description: "Encontramos inquilinos ideales para tu propiedad"
                                 },
                                 {
                                     title: "Inversión",
@@ -485,25 +499,6 @@ const BienesRaicesPage = () => {
                                 </Card>
                             ))}
                         </div>
-                    </div>
-                </section>
-
-                {/* CTA Section */}
-                <section className="py-20 px-4 bg-gradient-to-r from-avanza-navy to-avanza-navy/90 text-white">
-                    <div className="container max-w-4xl mx-auto text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 hero-title">
-                            ¿Listo para encontrar tu propiedad ideal?
-                        </h2>
-                        <p className="text-xl mb-10 text-white/90 font-medium">
-                            Contáctanos hoy y déjanos ayudarte a hacer realidad tus sueños inmobiliarios
-                        </p>
-                        <Button
-                            size="lg"
-                            className="text-lg px-12 py-6 bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                        >
-                            <Phone className="mr-2 h-5 w-5" />
-                            Contáctanos Ahora
-                        </Button>
                     </div>
                 </section>
             </main>

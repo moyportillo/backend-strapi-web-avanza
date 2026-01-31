@@ -16,17 +16,17 @@ const Header = () => {
                     <img
                         src={logo64}
                         className="h-10 w-auto"
-                        alt="Logo Iglesia Bautista Hebrón"
+                        alt="Logo avanza"
                     />
                 </Link>
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    <Link to="/bienes-raices" className="text-foreground/80 hover:text-foreground transition-colors">
-                        Bienes Raíces
-                    </Link>
                     <Link to="/prestamos" className="text-foreground/80 hover:text-foreground transition-colors">
                         Préstamos
+                    </Link>
+                    <Link to="/bienes-raices" className="text-foreground/80 hover:text-foreground transition-colors">
+                        Bienes Raíces
                     </Link>
                     <Button variant="outline" size="sm">
                         Contacto
@@ -48,21 +48,19 @@ const Header = () => {
                 <div className="md:hidden border-t bg-background">
                     <nav className="flex flex-col space-y-4 p-4">
                         <Link
-                            to="/bienes-raices"
-                            onClick={() => setOpen(false)}
-                            className="text-foreground/80 hover:text-foreground"
-                        >
-                            Bienes Raíces
-                        </Link>
-
-                        <Link
                             to="/prestamos"
                             onClick={() => setOpen(false)}
                             className="text-foreground/80 hover:text-foreground"
                         >
                             Préstamos
                         </Link>
-
+                        <Link
+                            to="/bienes-raices"
+                            onClick={() => setOpen(false)}
+                            className="text-foreground/80 hover:text-foreground"
+                        >
+                            Bienes Raíces
+                        </Link>
                         <Button
                             variant="outline"
                             size="sm"
