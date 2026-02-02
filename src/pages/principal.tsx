@@ -293,7 +293,7 @@ const PrincipalComponent = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="container max-w-5xl mx-auto px-4 text-center relative z-10">
                             <div key={currentSlide} className="animate-fadeInUp">
-                                <h1 className="hero-title text-5xl md:text-7xl font-black mb-4 text-white leading-tight">
+                                <h1 className="hero-title text-5xl md:text-7xl font-black mb-4 text-blue-900 leading-tight">
                                     {carouselSlides[currentSlide].title}
                                 </h1>
                                 {carouselSlides[currentSlide].subtitle && (
@@ -322,7 +322,7 @@ const PrincipalComponent = () => {
                                     <Button
                                         size="lg"
                                         variant="outline"
-                                        className="text-lg px-10 py-6 border-2 border-white text-white hover:bg-white hover:text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                        className="text-lg px-10 py-6 border-2 border-white text-green-800 hover:bg-white hover:text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                                         asChild
                                     >
                                         <Link to="/bienes-raices">
@@ -373,12 +373,12 @@ const PrincipalComponent = () => {
                         backgroundSize: '50px 50px'
                     }}></div>
 
-                    <div className="container relative z-10">
+                    <div className="relative z-10">
                         <div className="text-center mb-16 animate-fadeInUp">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black hero-title">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-700 hero-title">
                                 Requisitos para tu Préstamo
                             </h2>
-                            <p className="text-xl text-white/90 max-w-2xl mx-auto font-medium">
+                            <p className="text-xl text-amber-700 max-w-2xl mx-auto font-medium">
                                 Solo necesitas 3 documentos básicos para iniciar
                             </p>
                         </div>
@@ -406,18 +406,18 @@ const PrincipalComponent = () => {
                             ].map((req, index) => (
                                 <Card
                                     key={index}
-                                    className={`text-center bg-white hover:shadow-2xl transition-all duration-500 border-0 group animate-scaleIn animate-delay-${req.delay}`}
+                                    className={`text-center bg-amber-100 hover:shadow-2xl transition-all duration-500 border-0 group animate-scaleIn animate-delay-${req.delay}`}
                                 >
                                     <CardHeader>
                                         <div className="w-20 h-20 bg-gradient-to-br from-avanza-green to-avanza-green/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                            <req.icon className="h-10 w-10 text-white" />
+                                            <req.icon className="h-10 w-10 text-blue-950" />
                                         </div>
-                                        <CardTitle className="text-2xl font-bold text-avanza-navy">
+                                        <CardTitle className="text-2xl font-bold text-gray-700">
                                             {req.title}
                                         </CardTitle>
                                     </CardHeader>
                                     <CardContent>
-                                        <p className="text-avanza-navy/70 leading-relaxed font-medium">
+                                        <p className="text-gray-800 text-avanza-navy/70 leading-relaxed font-medium">
                                             {req.description}
                                         </p>
                                     </CardContent>
@@ -444,13 +444,13 @@ const PrincipalComponent = () => {
                 </section>
 
                 {/* Services Section - Navy/Gold gradient */}
-                <section className="py-20 px-4 bg-gradient-to-b from-white via-avanza-gold/10 to-white">
-                    <div className="container">
+                <section className="bg-blue-950 py-20 px-4 from-white via-avanza-gold/10 to-white">
+                    <div>
                         <div className="text-center mb-16 animate-fadeInUp">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-avanza-navy hero-title">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white hero-title">
                                 Nuestros Servicios
                             </h2>
-                            <p className="text-xl text-avanza-navy/70 max-w-2xl mx-auto font-medium">
+                            <p className="text-xl text-white max-w-2xl mx-auto font-medium">
                                 Soluciones financieras e inmobiliarias diseñadas para ti
                             </p>
                         </div>
@@ -459,12 +459,19 @@ const PrincipalComponent = () => {
                             {/* Prestamos Card - 70% focus */}
                             <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-gold/30 hover:border-avanza-gold overflow-hidden md:col-span-2 lg:col-span-1 animate-slideInLeft">
                                 <div className="absolute inset-0 bg-gradient-to-br from-avanza-navy via-avanza-navy/95 to-avanza-navy/90 opacity-90"></div>
+                                <div className="absolute inset-0">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                                        alt="Bienes Raíces"
+                                        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                                    />
+                                </div>
                                 <div className="relative z-10">
                                     <CardHeader className="text-center pb-6">
                                         <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl shimmer">
-                                            <DollarSign className="h-12 w-12 text-avanza-navy" />
+                                            <DollarSign className="h-12 w-12 text-green-600" />
                                         </div>
-                                        <CardTitle className="text-3xl font-bold text-white mb-3">
+                                        <CardTitle className="text-3xl font-bold text-blue-950 mb-3">
                                             Préstamos Rápidos
                                         </CardTitle>
                                         <CardDescription className="text-xl text-avanza-gold font-semibold">
@@ -480,9 +487,9 @@ const PrincipalComponent = () => {
                                                 { icon: Zap, text: "NO necesitas constancia de trabajo" },
                                                 { icon: Shield, text: "Solo evaluamos tu garantía" }
                                             ].map((feature, index) => (
-                                                <div key={index} className="flex items-center text-left bg-white/10 rounded-lg p-3 backdrop-blur-sm">
+                                                <div key={index} className="flex items-center text-left rounded-lg p-2">
                                                     <feature.icon className="h-5 w-5 text-avanza-gold mr-3 flex-shrink-0" />
-                                                    <span className="text-white font-medium">{feature.text}</span>
+                                                    <span className="text-gray-700 font-medium">{feature.text}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -514,15 +521,15 @@ const PrincipalComponent = () => {
                                         <div className="w-24 h-24 bg-avanza-navy rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                             <Home className="h-12 w-12 text-avanza-gold" />
                                         </div>
-                                        <CardTitle className="text-3xl font-bold text-avanza-navy mb-3">
+                                        <CardTitle className="text-3xl font-bold text-gray-700 mb-3">
                                             Bienes Raíces
                                         </CardTitle>
-                                        <CardDescription className="text-xl text-avanza-navy/80 font-semibold">
+                                        <CardDescription className="text-xl text-gray-700 font-semibold">
                                             Tu propiedad ideal te espera
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="text-center">
-                                        <p className="text-avanza-navy/70 mb-8 leading-relaxed font-medium text-lg">
+                                        <p className="text-gray-700 mb-8 leading-relaxed font-medium text-lg">
                                             Explora nuestra amplia selección de propiedades residenciales y comerciales.
                                             Desde casas familiares hasta terrenos para inversión, te ayudamos a encontrar
                                             el lugar perfecto para ti.
@@ -546,54 +553,54 @@ const PrincipalComponent = () => {
 
                 {/* Why Choose Us Section - Mixed Colors */}
                 <section className="py-20 px-4 bg-gradient-to-b from-avanza-navy/5 to-white">
-                    <div className="container">
+                    <div>
                         <div className="text-center mb-16 animate-fadeInUp">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-avanza-navy hero-title">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-700 hero-title">
                                 ¿Por Qué Elegirnos?
                             </h2>
-                            <p className="text-xl text-avanza-navy/70 max-w-2xl mx-auto font-medium">
+                            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
                                 Más de 15 años de experiencia respaldando tus decisiones financieras
                             </p>
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                             {/* Experiencia - Gold */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-avanza-gold to-avanza-gold/80 text-blue-900 group animate-scaleIn">
+                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-blue-950 from-avanza-gold to-avanza-gold/80 text-blue-900 group animate-scaleIn">
                                 <CardHeader>
                                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                         <Users className="h-10 w-10 text-avanza-gold" />
                                     </div>
-                                    <CardTitle className="text-2xl font-bold">Experiencia</CardTitle>
+                                    <CardTitle className="text-white text-2xl font-bold">Experiencia</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/90 leading-relaxed font-medium">
-                                        Equipo de expertos con más de 15 años en el mercado financiero e inmobiliario
+                                        Equipo de expertos con más de 20 años en el mercado financiero e inmobiliario
                                     </p>
                                 </CardContent>
                             </Card>
 
                             {/* Confianza - Navy (Center) */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
+                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-amber-500 from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
                                 <CardHeader>
                                     <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                         <Shield className="h-12 w-12 text-avanza-navy" />
                                     </div>
-                                    <CardTitle className="text-2xl font-bold">Confianza Total</CardTitle>
+                                    <CardTitle className="text-blue-950 text-2xl font-bold">Confianza Total</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-black leading-relaxed font-medium mb-4">
                                         Regulados y supervisados por las máximas autoridades financieras de Honduras
                                     </p>
-                                    <div className="space-y-2 text-sm">
-                                        <div className="flex items-center justify-center text-avanza-gold">
+                                    <div className="space-y-2 text-sm text-blue-900">
+                                        <div className="flex items-center justify-center">
                                             <BadgeCheck className="h-4 w-4 mr-2" />
                                             <span className="font-semibold">Banco Central de Honduras</span>
                                         </div>
-                                        <div className="flex items-center justify-center text-avanza-gold">
+                                        <div className="flex items-center justify-center">
                                             <BadgeCheck className="h-4 w-4 mr-2" />
                                             <span className="font-semibold">Comisión de Banca y Seguros</span>
                                         </div>
-                                        <div className="flex items-center justify-center text-avanza-gold">
+                                        <div className="flex items-center justify-center">
                                             <BadgeCheck className="h-4 w-4 mr-2" />
                                             <span className="font-semibold">Servicio de Administración de Rentas</span>
                                         </div>
@@ -602,12 +609,12 @@ const PrincipalComponent = () => {
                             </Card>
 
                             {/* Resultados - Green */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-avanza-green to-avanza-green/80 text-white group animate-scaleIn animate-delay-200">
+                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-green-800 from-avanza-green to-avanza-green/80 text-white group animate-scaleIn animate-delay-200">
                                 <CardHeader>
                                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                         <TrendingUp className="h-10 w-10 text-avanza-green" />
                                     </div>
-                                    <CardTitle className="text-2xl font-bold">Resultados</CardTitle>
+                                    <CardTitle className="text-2xl font-bold text-amber-500">Resultados</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-white/90 leading-relaxed font-medium">
@@ -620,7 +627,7 @@ const PrincipalComponent = () => {
                 </section>
 
                 {/* CTA Section - Gold gradient */}
-                <section className="py-20 px-4 bg-gradient-to-br from-avanza-gold via-avanza-gold/90 to-avanza-gold/80 relative overflow-hidden">
+                <section className="py-20 px-4 bg-blue-950 from-avanza-gold via-avanza-gold/90 to-avanza-gold/80 relative overflow-hidden">
                     {/* Decorative elements */}
                     <div className="absolute inset-0 opacity-10" style={{
                         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(30, 58, 138, 0.1) 20px, rgba(30, 58, 138, 0.1) 40px)`
@@ -631,10 +638,10 @@ const PrincipalComponent = () => {
                             <div className="w-24 h-24 bg-avanza-navy rounded-full flex items-center justify-center mx-auto mb-8 animate-float shadow-2xl">
                                 <Award className="h-12 w-12 text-avanza-gold" />
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-avanza-navy hero-title">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white hero-title">
                                 ¿Listo para Comenzar?
                             </h2>
-                            <p className="text-xl text-avanza-navy/80 mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
+                            <p className="text-xl text-amber-600 mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
                                 Nuestros asesores están listos para ayudarte a encontrar la mejor solución
                                 financiera o inmobiliaria para tus necesidades
                             </p>

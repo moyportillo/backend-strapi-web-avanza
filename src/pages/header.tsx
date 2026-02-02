@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between">
+            <div className="px-10 flex h-16 items-center justify-between">
 
                 {/* Logo */}
                 <Link to="/public" className="flex items-center space-x-2">
@@ -22,6 +22,9 @@ const Header = () => {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex items-center space-x-6">
+                    <Link to="/home" className="text-foreground/80 hover:text-foreground transition-colors">
+                        Inicio
+                    </Link>
                     <Link to="/prestamos" className="text-foreground/80 hover:text-foreground transition-colors">
                         Préstamos
                     </Link>
@@ -47,6 +50,13 @@ const Header = () => {
             {open && (
                 <div className="md:hidden border-t bg-background">
                     <nav className="flex flex-col space-y-4 p-4">
+                        <Link
+                            to="/home"
+                            onClick={() => setOpen(false)}
+                            className="text-foreground/80 hover:text-foreground"
+                        >
+                            Inicio
+                        </Link>
                         <Link
                             to="/prestamos"
                             onClick={() => setOpen(false)}
