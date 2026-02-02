@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import {
-    Clock,
     Shield,
-    TrendingDown,
     Home,
     MapPin,
     Car,
     CheckCircle,
     FileText,
-    Users,
+    CreditCard,
+    Receipt,
     Handshake,
     Info,
-    Send,
+    Send, ArrowRight,
 } from "lucide-react"
+import {Link} from "react-router-dom";
+import ElegirnosComponent from "@/pages/elegirnos";
 
 type LoanType = {
     id: number
@@ -43,39 +44,7 @@ const loanTypes: LoanType[] = [
     },
 ]
 
-type Benefit = {
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-    title: string
-    description: string
-    image: string
-}
 
-const benefits: Benefit[] = [
-    {
-        icon: Clock,
-        title: "Aprobación Rápida",
-        description: "Respuesta en menos de 24 horas",
-        image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80"
-    },
-    {
-        icon: Shield,
-        title: "Proceso Seguro",
-        description: "Información protegida con altos estándares",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80"
-    },
-    {
-        icon: TrendingDown,
-        title: "Tasas Competitivas",
-        description: "Las mejores tasas ajustadas a tu perfil",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80"
-    },
-    {
-        icon: Users,
-        title: "Asesoría Personalizada",
-        description: "Expertos te acompañan en todo el proceso",
-        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80"
-    },
-]
 
 const PrestamosPage = () => {
     return (
@@ -156,18 +125,18 @@ const PrestamosPage = () => {
             `}</style>
 
             <main className="flex-1">
-                <section className="py-20 px-4 bg-gradient-to-br from-[#1e3a8a] via-[#1e3a8a] to-[#152a6b] relative overflow-hidden">
+                <section className="py-20 px-4 from-[#1e3a8a] via-[#1e3a8a] to-[#152a6b] relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#d4af37]/5 rounded-full blur-3xl"></div>
                     </div>
 
                     <div className="container max-w-5xl mx-auto text-center relative z-10">
-                        <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-white animate-fadeInUp leading-tight">
+                        <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-gray-800 animate-fadeInUp leading-tight">
                             Préstamos que
                             <span className="block text-[#d4af37] mt-2">Hacen Realidad tus Sueños</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animate-delay-100 font-medium">
+                        <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animate-delay-100 font-medium">
                             Obtén el financiamiento que necesitas con tasas competitivas y procesos rápidos
                         </p>
                     </div>
@@ -206,13 +175,91 @@ const PrestamosPage = () => {
                     </div>
                 </section>
 
-                <section className="py-20 px-4 bg-gradient-to-b from-white via-[#1e3a8a]/5 to-[#1e3a8a]/10">
+                {/* Requirements Section - Green Background */}
+                <section className="py-20 px-4 bg-gradient-to-br from-avanza-green to-avanza-green/80 relative overflow-hidden">
+                    {/* Decorative pattern */}
+                    <div className="absolute inset-0 opacity-10" style={{
+                        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                        backgroundSize: '50px 50px'
+                    }}></div>
+
+                    <div className="relative z-10">
+                        <div className="text-center mb-16 animate-fadeInUp">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-700 hero-title">
+                                Requisitos para tu Préstamo
+                            </h2>
+                            <p className="text-xl text-amber-700 max-w-2xl mx-auto font-medium">
+                                Solo necesitas 3 documentos básicos para iniciar
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            {[
+                                {
+                                    icon: FileText,
+                                    title: "Documentos de la Garantía",
+                                    description: "Escritura o documentos legales de la propiedad que ofrecerás como garantía",
+                                    delay: "100"
+                                },
+                                {
+                                    icon: CreditCard,
+                                    title: "Identificación",
+                                    description: "Cédula de identidad o pasaporte vigente del solicitante",
+                                    delay: "200"
+                                },
+                                {
+                                    icon: Receipt,
+                                    title: "Recibos de Servicios",
+                                    description: "Recibo de energía eléctrica y agua del último mes",
+                                    delay: "300"
+                                }
+                            ].map((req, index) => (
+                                <Card
+                                    key={index}
+                                    className={`text-center bg-amber-100 hover:shadow-2xl transition-all duration-500 border-0 group animate-scaleIn animate-delay-${req.delay}`}
+                                >
+                                    <CardHeader>
+                                        <div className="w-20 h-20 bg-gradient-to-br from-avanza-green to-avanza-green/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                            <req.icon className="h-10 w-10 text-blue-950" />
+                                        </div>
+                                        <CardTitle className="text-2xl font-bold text-gray-700">
+                                            {req.title}
+                                        </CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-gray-800 text-avanza-navy/70 leading-relaxed font-medium">
+                                            {req.description}
+                                        </p>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+
+                        <div className="text-center mt-12">
+                            <p className="text-white text-lg font-semibold mb-6">
+                                ¡Es así de simple! Sin complicaciones ni trámites extensos
+                            </p>
+                            <Button
+                                size="lg"
+                                className="bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold text-lg px-10 py-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                asChild
+                            >
+                                <Link to="/prestamos">
+                                    <ArrowRight className="mr-2 h-5 w-5" />
+                                    Comenzar Solicitud
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="py-20 px-4 bg-[#1e3a8a] from-white via-[#1e3a8a]/5 to-[#1e3a8a]/10">
                     <div className="container">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e3a8a] hero-title">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white hero-title">
                                 Tipos de Préstamos
                             </h2>
-                            <p className="text-xl text-[#1e3a8a]/70 max-w-2xl mx-auto font-medium">
+                            <p className="text-xl text-white max-w-2xl mx-auto font-medium">
                                 Elige según la garantía que deseas ofrecer
                             </p>
                         </div>
@@ -256,55 +303,7 @@ const PrestamosPage = () => {
                     </div>
                 </section>
 
-                <section className="py-20 px-4 bg-gradient-to-b from-[#d4af37]/10 via-[#d4af37]/5 to-white relative">
-                    <div className="absolute inset-0 shimmer pointer-events-none"></div>
-
-                    <div className="container relative z-10">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e3a8a] hero-title">
-                                ¿Por Qué Elegirnos?
-                            </h2>
-                            <p className="text-xl text-[#1e3a8a]/70 max-w-2xl mx-auto font-medium">
-                                Ofrecemos las mejores condiciones con un servicio de excelencia
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {benefits.map((benefit, i) => (
-                                <Card
-                                    key={i}
-                                    className="benefit-card overflow-hidden border-2 hover:border-[#d4af37] shadow-lg hover:shadow-2xl cursor-pointer group transition-all duration-400"
-                                >
-                                    <div className="relative h-48 overflow-hidden">
-                                        <img
-                                            src={benefit.image}
-                                            alt={benefit.title}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                        <div className="benefit-card-overlay absolute inset-0 bg-[#1e3a8a] opacity-60 transition-opacity duration-400"></div>
-
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-20 h-20 bg-[#d4af37] rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
-                                                <benefit.icon className="h-10 w-10 text-white" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <CardHeader className="transition-all duration-400">
-                                        <CardTitle className="text-xl font-bold text-[#1e3a8a] text-center">
-                                            {benefit.title}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="transition-all duration-400">
-                                        <p className="text-sm text-[#1e3a8a]/70 text-center leading-relaxed">
-                                            {benefit.description}
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                <ElegirnosComponent/>
                 <section className="py-20 px-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37]/90">
                     <div className="container max-w-4xl mx-auto text-center">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1e3a8a] hero-title">

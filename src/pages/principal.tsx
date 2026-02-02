@@ -11,15 +11,13 @@ import {
     ChevronLeft,
     ChevronRight,
     MapPin,
-    FileText,
-    CreditCard,
-    Receipt,
     Clock,
     BadgeCheck,
     Zap,
     Award
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import ElegirnosComponent from "@/pages/elegirnos";
 
 type CarouselSlide = {
     id: number;
@@ -79,192 +77,6 @@ const PrincipalComponent = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-                
-                :root {
-                    --avanza-navy: #1e3a8a;
-                    --avanza-gold: #d4af37;
-                    --avanza-green: #059669;
-                }
-                
-                .avanza-navy {
-                    color: var(--avanza-navy);
-                }
-                
-                .bg-avanza-navy {
-                    background-color: var(--avanza-navy);
-                }
-                
-                .border-avanza-gold {
-                    border-color: var(--avanza-gold);
-                }
-                
-                .text-avanza-gold {
-                    color: var(--avanza-gold);
-                }
-                
-                .bg-avanza-gold {
-                    background-color: var(--avanza-gold);
-                }
-
-                .text-avanza-green {
-                    color: var(--avanza-green);
-                }
-
-                .bg-avanza-green {
-                    background-color: var(--avanza-green);
-                }
-                
-                .hero-title {
-                    font-family: 'Playfair Display', serif;
-                }
-                
-                body {
-                    font-family: 'Montserrat', sans-serif;
-                }
-
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                @keyframes slideInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-50px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes slideInRight {
-                    from {
-                        opacity: 0;
-                        transform: translateX(50px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes scaleIn {
-                    from {
-                        opacity: 0;
-                        transform: scale(0.95);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                }
-
-                @keyframes slideChange {
-                    0% {
-                        opacity: 0;
-                        transform: scale(1.1);
-                    }
-                    100% {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                }
-
-                .animate-fadeIn {
-                    animation: fadeIn 1s ease-out forwards;
-                }
-
-                .animate-fadeInUp {
-                    animation: fadeInUp 0.8s ease-out forwards;
-                }
-
-                .animate-slideInLeft {
-                    animation: slideInLeft 0.8s ease-out forwards;
-                }
-
-                .animate-slideInRight {
-                    animation: slideInRight 0.8s ease-out forwards;
-                }
-
-                .animate-scaleIn {
-                    animation: scaleIn 0.6s ease-out forwards;
-                }
-
-                .animate-slide-change {
-                    animation: slideChange 0.8s ease-out;
-                }
-
-                .animate-delay-100 {
-                    animation-delay: 0.1s;
-                    opacity: 0;
-                }
-
-                .animate-delay-200 {
-                    animation-delay: 0.2s;
-                    opacity: 0;
-                }
-
-                .animate-delay-300 {
-                    animation-delay: 0.3s;
-                    opacity: 0;
-                }
-
-                .animate-delay-400 {
-                    animation-delay: 0.4s;
-                    opacity: 0;
-                }
-
-                @keyframes float {
-                    0%, 100% {
-                        transform: translateY(0px);
-                    }
-                    50% {
-                        transform: translateY(-20px);
-                    }
-                }
-
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-
-                @keyframes shimmer {
-                    0% {
-                        background-position: -1000px 0;
-                    }
-                    100% {
-                        background-position: 1000px 0;
-                    }
-                }
-
-                .shimmer {
-                    background: linear-gradient(
-                        to right,
-                        transparent 0%,
-                        rgba(212, 175, 55, 0.3) 50%,
-                        transparent 100%
-                    );
-                    background-size: 1000px 100%;
-                    animation: shimmer 3s infinite;
-                }
-            `}</style>
 
             <main className="flex-1">
                 {/* Hero Section with Carousel */}
@@ -365,84 +177,6 @@ const PrincipalComponent = () => {
                     </div>
                 </section>
 
-                {/* Requirements Section - Green Background */}
-                <section className="py-20 px-4 bg-gradient-to-br from-avanza-green to-avanza-green/80 relative overflow-hidden">
-                    {/* Decorative pattern */}
-                    <div className="absolute inset-0 opacity-10" style={{
-                        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                        backgroundSize: '50px 50px'
-                    }}></div>
-
-                    <div className="relative z-10">
-                        <div className="text-center mb-16 animate-fadeInUp">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-700 hero-title">
-                                Requisitos para tu Préstamo
-                            </h2>
-                            <p className="text-xl text-amber-700 max-w-2xl mx-auto font-medium">
-                                Solo necesitas 3 documentos básicos para iniciar
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                            {[
-                                {
-                                    icon: FileText,
-                                    title: "Documentos de la Garantía",
-                                    description: "Escritura o documentos legales de la propiedad que ofrecerás como garantía",
-                                    delay: "100"
-                                },
-                                {
-                                    icon: CreditCard,
-                                    title: "Identificación",
-                                    description: "Cédula de identidad o pasaporte vigente del solicitante",
-                                    delay: "200"
-                                },
-                                {
-                                    icon: Receipt,
-                                    title: "Recibos de Servicios",
-                                    description: "Recibo de energía eléctrica y agua del último mes",
-                                    delay: "300"
-                                }
-                            ].map((req, index) => (
-                                <Card
-                                    key={index}
-                                    className={`text-center bg-amber-100 hover:shadow-2xl transition-all duration-500 border-0 group animate-scaleIn animate-delay-${req.delay}`}
-                                >
-                                    <CardHeader>
-                                        <div className="w-20 h-20 bg-gradient-to-br from-avanza-green to-avanza-green/70 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                                            <req.icon className="h-10 w-10 text-blue-950" />
-                                        </div>
-                                        <CardTitle className="text-2xl font-bold text-gray-700">
-                                            {req.title}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-gray-800 text-avanza-navy/70 leading-relaxed font-medium">
-                                            {req.description}
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-
-                        <div className="text-center mt-12">
-                            <p className="text-white text-lg font-semibold mb-6">
-                                ¡Es así de simple! Sin complicaciones ni trámites extensos
-                            </p>
-                            <Button
-                                size="lg"
-                                className="bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold text-lg px-10 py-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                                asChild
-                            >
-                                <Link to="/prestamos">
-                                    <ArrowRight className="mr-2 h-5 w-5" />
-                                    Comenzar Solicitud
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Services Section - Navy/Gold gradient */}
                 <section className="bg-blue-950 py-20 px-4 from-white via-avanza-gold/10 to-white">
                     <div>
@@ -461,7 +195,7 @@ const PrincipalComponent = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-avanza-navy via-avanza-navy/95 to-avanza-navy/90 opacity-90"></div>
                                 <div className="absolute inset-0">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                                        src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80"
                                         alt="Bienes Raíces"
                                         className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
                                     />
@@ -551,80 +285,7 @@ const PrincipalComponent = () => {
                     </div>
                 </section>
 
-                {/* Why Choose Us Section - Mixed Colors */}
-                <section className="py-20 px-4 bg-gradient-to-b from-avanza-navy/5 to-white">
-                    <div>
-                        <div className="text-center mb-16 animate-fadeInUp">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-700 hero-title">
-                                ¿Por Qué Elegirnos?
-                            </h2>
-                            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
-                                Más de 15 años de experiencia respaldando tus decisiones financieras
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                            {/* Experiencia - Gold */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-blue-950 from-avanza-gold to-avanza-gold/80 text-blue-900 group animate-scaleIn">
-                                <CardHeader>
-                                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                        <Users className="h-10 w-10 text-avanza-gold" />
-                                    </div>
-                                    <CardTitle className="text-white text-2xl font-bold">Experiencia</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-white/90 leading-relaxed font-medium">
-                                        Equipo de expertos con más de 20 años en el mercado financiero e inmobiliario
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Confianza - Navy (Center) */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-amber-500 from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
-                                <CardHeader>
-                                    <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                        <Shield className="h-12 w-12 text-avanza-navy" />
-                                    </div>
-                                    <CardTitle className="text-blue-950 text-2xl font-bold">Confianza Total</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-black leading-relaxed font-medium mb-4">
-                                        Regulados y supervisados por las máximas autoridades financieras de Honduras
-                                    </p>
-                                    <div className="space-y-2 text-sm text-blue-900">
-                                        <div className="flex items-center justify-center">
-                                            <BadgeCheck className="h-4 w-4 mr-2" />
-                                            <span className="font-semibold">Banco Central de Honduras</span>
-                                        </div>
-                                        <div className="flex items-center justify-center">
-                                            <BadgeCheck className="h-4 w-4 mr-2" />
-                                            <span className="font-semibold">Comisión de Banca y Seguros</span>
-                                        </div>
-                                        <div className="flex items-center justify-center">
-                                            <BadgeCheck className="h-4 w-4 mr-2" />
-                                            <span className="font-semibold">Servicio de Administración de Rentas</span>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            {/* Resultados - Green */}
-                            <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-green-800 from-avanza-green to-avanza-green/80 text-white group animate-scaleIn animate-delay-200">
-                                <CardHeader>
-                                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                        <TrendingUp className="h-10 w-10 text-avanza-green" />
-                                    </div>
-                                    <CardTitle className="text-2xl font-bold text-amber-500">Resultados</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-white/90 leading-relaxed font-medium">
-                                        Miles de clientes satisfechos han logrado sus objetivos financieros con nosotros
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
+                <ElegirnosComponent />
 
                 {/* CTA Section - Gold gradient */}
                 <section className="py-20 px-4 bg-blue-950 from-avanza-gold via-avanza-gold/90 to-avanza-gold/80 relative overflow-hidden">

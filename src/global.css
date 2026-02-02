@@ -42,7 +42,190 @@
   color: #888;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
+   :root {
+     --avanza-navy: #1e3a8a;
+     --avanza-gold: #d4af37;
+     --avanza-green: #059669;
+   }
+
+   .avanza-navy {
+     color: var(--avanza-navy);
+   }
+
+   .bg-avanza-navy {
+     background-color: var(--avanza-navy);
+   }
+
+   .border-avanza-gold {
+     border-color: var(--avanza-gold);
+   }
+
+   .text-avanza-gold {
+     color: var(--avanza-gold);
+   }
+
+   .bg-avanza-gold {
+     background-color: var(--avanza-gold);
+   }
+
+   .text-avanza-green {
+     color: var(--avanza-green);
+   }
+
+   .bg-avanza-green {
+     background-color: var(--avanza-green);
+   }
+
+   .hero-title {
+     font-family: 'Playfair Display', serif;
+   }
+
+   body {
+     font-family: 'Montserrat', sans-serif;
+   }
+
+   @keyframes fadeIn {
+     from {
+       opacity: 0;
+     }
+     to {
+       opacity: 1;
+     }
+   }
+
+   @keyframes fadeInUp {
+     from {
+       opacity: 0;
+       transform: translateY(30px);
+     }
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   @keyframes slideInLeft {
+     from {
+       opacity: 0;
+       transform: translateX(-50px);
+     }
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   @keyframes slideInRight {
+     from {
+       opacity: 0;
+       transform: translateX(50px);
+     }
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   @keyframes scaleIn {
+     from {
+       opacity: 0;
+       transform: scale(0.95);
+     }
+     to {
+       opacity: 1;
+       transform: scale(1);
+     }
+   }
+
+   @keyframes slideChange {
+     0% {
+       opacity: 0;
+       transform: scale(1.1);
+     }
+     100% {
+       opacity: 1;
+       transform: scale(1);
+     }
+   }
+
+   .animate-fadeIn {
+     animation: fadeIn 1s ease-out forwards;
+   }
+
+   .animate-fadeInUp {
+     animation: fadeInUp 0.8s ease-out forwards;
+   }
+
+   .animate-slideInLeft {
+     animation: slideInLeft 0.8s ease-out forwards;
+   }
+
+   .animate-slideInRight {
+     animation: slideInRight 0.8s ease-out forwards;
+   }
+
+   .animate-scaleIn {
+     animation: scaleIn 0.6s ease-out forwards;
+   }
+
+   .animate-slide-change {
+     animation: slideChange 0.8s ease-out;
+   }
+
+   .animate-delay-100 {
+     animation-delay: 0.1s;
+     opacity: 0;
+   }
+
+   .animate-delay-200 {
+     animation-delay: 0.2s;
+     opacity: 0;
+   }
+
+   .animate-delay-300 {
+     animation-delay: 0.3s;
+     opacity: 0;
+   }
+
+   .animate-delay-400 {
+     animation-delay: 0.4s;
+     opacity: 0;
+   }
+
+   @keyframes float {
+     0%, 100% {
+       transform: translateY(0px);
+     }
+     50% {
+       transform: translateY(-20px);
+     }
+   }
+
+   .animate-float {
+     animation: float 3s ease-in-out infinite;
+   }
+
+   @keyframes shimmer {
+     0% {
+       background-position: -1000px 0;
+     }
+     100% {
+       background-position: 1000px 0;
+     }
+   }
+
+   .shimmer {
+     background: linear-gradient(
+             to right,
+             transparent 0%,
+             rgba(212, 175, 55, 0.3) 50%,
+             transparent 100%
+     );
+     background-size: 1000px 100%;
+     animation: shimmer 3s infinite;
+   }
 
 @layer base {
   :root {

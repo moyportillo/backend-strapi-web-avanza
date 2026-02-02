@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Bed, Bath, Square, Heart, Building, ChevronLeft, ChevronRight, Home } from "lucide-react"
 import { useState } from "react"
+import ElegirnosBienesComponent from "@/pages/elegirnos-bienes";
 
 type Property = {
     id: number
@@ -355,11 +356,11 @@ const BienesRaicesPage = () => {
                     </div>
 
                     <div className="container max-w-5xl mx-auto text-center relative z-10">
-                        <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-avanza-navy animate-fadeInUp leading-tight">
+                        <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-gray-800 animate-fadeInUp leading-tight">
                             Encuentra tu
                             <span className="block text-avanza-gold mt-2">Hogar Ideal</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-avanza-navy/70 mb-10 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animate-delay-100 font-medium">
+                        <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed animate-fadeInUp animate-delay-100 font-medium">
                             Explora nuestra selección de propiedades premium en las mejores ubicaciones de Honduras.
                         </p>
                     </div>
@@ -501,6 +502,8 @@ const BienesRaicesPage = () => {
                         </div>
                     </div>
                 </section>
+
+                <ElegirnosBienesComponent/>
             </main>
         </div>
     )
