@@ -16,6 +16,9 @@ import {
     Zap,
     Award
 } from "lucide-react";
+import MetropolisImg from "@/assets/img/metro.jpg";
+import MoneyImg from "@/assets/img/money.jpg";
+import HomeImg from "@/assets/img/house.jpg";
 import { useState, useEffect } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
 
@@ -31,21 +34,21 @@ type CarouselSlide = {
 const carouselSlides: CarouselSlide[] = [
     {
         id: 1,
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        image: MetropolisImg,
         title: "AVANZA",
         subtitle: "Bienes Raíces y Consultoría Financiera",
         icon: MapPin,
-        location: "Tegucigalpa, Honduras"
+        location: "Torres Metropolis, Bulevar Suyapa, Tegucigalpa, Honduras"
     },
     {
         id: 2,
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
+        image: MoneyImg,
         title: "Soluciones Financieras",
         subtitle: "Préstamos rápidos y seguros con tu garantía"
     },
     {
         id: 3,
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
+        image: HomeImg,
         title: "Te ayudamos con tu nuevo hogar",
         subtitle: "Encuentra la propiedad de tus sueños"
     }

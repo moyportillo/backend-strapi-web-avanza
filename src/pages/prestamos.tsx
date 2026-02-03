@@ -27,19 +27,19 @@ const loanTypes: LoanType[] = [
     {
         id: 1,
         title: "Préstamos con Garantía de Casa",
-        description: "Obtén el mejor financiamiento dejando tu casa como garantía. Tasas preferenciales y montos competitivos.",
+        description: "Obtén el mejor financiamiento dejando una casa como garantía. Tasas preferenciales y montos competitivos.",
         icon: Home,
     },
     {
         id: 2,
         title: "Préstamos con Garantía de Terreno",
-        description: "Aprovecha el valor de tu terreno para obtener liquidez inmediata. Procesos ágiles y flexibles.",
+        description: "Aprovecha el valor de un terreno para obtener liquidez inmediata. Procesos ágiles y flexibles.",
         icon: MapPin,
     },
     {
         id: 3,
         title: "Préstamos con Garantía de Vehículo",
-        description: "Usa tu vehículo como garantía. El vehículo queda bajo custodia durante la vigencia del financiamiento.",
+        description: "Usa un vehículo como garantía. El vehículo queda bajo custodia durante la vigencia del financiamiento.",
         icon: Car,
     },
 ]
