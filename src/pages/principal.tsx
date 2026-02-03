@@ -7,7 +7,6 @@ import {
     DollarSign,
     Shield,
     Users,
-    TrendingUp,
     ChevronLeft,
     ChevronRight,
     MapPin,
@@ -36,7 +35,7 @@ const carouselSlides: CarouselSlide[] = [
         id: 1,
         image: MetropolisImg,
         title: "AVANZA",
-        subtitle: "Bienes Raíces y Consultoría Financiera",
+        subtitle: "Servicios Financieros y Bienes Raíces",
         icon: MapPin,
         location: "Torres Metropolis, Bulevar Suyapa, Tegucigalpa, Honduras"
     },
@@ -57,6 +56,11 @@ const carouselSlides: CarouselSlide[] = [
 const PrincipalComponent = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    // Scroll to top on component mount
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }, []);
+
     // Auto-advance carousel
     useEffect(() => {
         const timer = setInterval(() => {
@@ -64,6 +68,27 @@ const PrincipalComponent = () => {
         }, 5000);
 
         return () => clearInterval(timer);
+    }, []);
+
+    // Scroll animations observer
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        const elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+        elements.forEach(el => observer.observe(el));
+
+        return () => observer.disconnect();
     }, []);
 
     const nextSlide = () => {
@@ -80,6 +105,265 @@ const PrincipalComponent = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
+            <style>{`
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+                
+                :root {
+                    --avanza-navy: #1e3a8a;
+                    --avanza-gold: #d4af37;
+                    --avanza-green: #059669;
+                }
+                
+                .avanza-navy {
+                    color: var(--avanza-navy);
+                }
+                
+                .bg-avanza-navy {
+                    background-color: var(--avanza-navy);
+                }
+                
+                .border-avanza-gold {
+                    border-color: var(--avanza-gold);
+                }
+                
+                .text-avanza-gold {
+                    color: var(--avanza-gold);
+                }
+                
+                .bg-avanza-gold {
+                    background-color: var(--avanza-gold);
+                }
+
+                .text-avanza-green {
+                    color: var(--avanza-green);
+                }
+
+                .bg-avanza-green {
+                    background-color: var(--avanza-green);
+                }
+                
+                .hero-title {
+                    font-family: 'Playfair Display', serif;
+                }
+                
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                }
+
+                /* Scroll reveal animations */
+                .scroll-reveal {
+                    opacity: 0;
+                    transform: translateY(60px);
+                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+                }
+
+                .scroll-reveal.is-visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .scroll-reveal-left {
+                    opacity: 0;
+                    transform: translateX(-80px);
+                    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+                }
+
+                .scroll-reveal-left.is-visible {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                .scroll-reveal-right {
+                    opacity: 0;
+                    transform: translateX(80px);
+                    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+                }
+
+                .scroll-reveal-right.is-visible {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                .scroll-reveal-scale {
+                    opacity: 0;
+                    transform: scale(0.85);
+                    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+                }
+
+                .scroll-reveal-scale.is-visible {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                /* Parallax effect for images with scroll */
+                .parallax-image {
+                    transform: scale(1);
+                    transition: transform 0.6s ease-out;
+                }
+
+                .is-visible .parallax-image {
+                    transform: scale(1.05);
+                }
+
+                .parallax-image:hover {
+                    transform: scale(1.1) !important;
+                }
+
+                /* Image overlay for better text visibility */
+                .image-overlay::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(135deg, rgba(30, 58, 138, 0.88) 0%, rgba(30, 58, 138, 0.75) 40%, rgba(212, 175, 55, 0.6) 100%);
+                    z-index: 1;
+                }
+
+                .image-overlay-content {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes slideInLeft {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                @keyframes slideInRight {
+                    from {
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                @keyframes scaleIn {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.95);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                @keyframes slideChange {
+                    0% {
+                        opacity: 0;
+                        transform: scale(1.1);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                .animate-fadeIn {
+                    animation: fadeIn 1s ease-out forwards;
+                }
+
+                .animate-fadeInUp {
+                    animation: fadeInUp 0.8s ease-out forwards;
+                }
+
+                .animate-slideInLeft {
+                    animation: slideInLeft 0.8s ease-out forwards;
+                }
+
+                .animate-slideInRight {
+                    animation: slideInRight 0.8s ease-out forwards;
+                }
+
+                .animate-scaleIn {
+                    animation: scaleIn 0.6s ease-out forwards;
+                }
+
+                .animate-slide-change {
+                    animation: slideChange 0.8s ease-out;
+                }
+
+                .animate-delay-100 {
+                    animation-delay: 0.1s;
+                    opacity: 0;
+                }
+
+                .animate-delay-200 {
+                    animation-delay: 0.2s;
+                    opacity: 0;
+                }
+
+                .animate-delay-300 {
+                    animation-delay: 0.3s;
+                    opacity: 0;
+                }
+
+                .animate-delay-400 {
+                    animation-delay: 0.4s;
+                    opacity: 0;
+                }
+
+                @keyframes float {
+                    0%, 100% {
+                        transform: translateY(0px);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+
+                .animate-float {
+                    animation: float 3s ease-in-out infinite;
+                }
+
+                @keyframes shimmer {
+                    0% {
+                        background-position: -1000px 0;
+                    }
+                    100% {
+                        background-position: 1000px 0;
+                    }
+                }
+
+                .shimmer {
+                    background: linear-gradient(
+                        to right,
+                        transparent 0%,
+                        rgba(212, 175, 55, 0.3) 50%,
+                        transparent 100%
+                    );
+                    background-size: 1000px 100%;
+                    animation: shimmer 3s infinite;
+                }
+            `}</style>
 
             <main className="flex-1">
                 {/* Hero Section with Carousel */}
@@ -89,7 +373,7 @@ const PrincipalComponent = () => {
                         {carouselSlides.map((slide, index) => (
                             <div
                                 key={slide.id}
-                                className={`absolute inset-0 transition-opacity duration-1000 ${
+                                className={`absolute inset-0 transition-opacity duration-2000 ${
                                     index === currentSlide ? 'opacity-100 animate-slide-change' : 'opacity-0'
                                 }`}
                             >
@@ -98,17 +382,18 @@ const PrincipalComponent = () => {
                                     alt={slide.title}
                                     className="w-full h-full object-cover"
                                 />
-                                {/* Overlay gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-b from-avanza-navy/70 via-avanza-navy/50 to-avanza-navy/80"></div>
+
+                                {/* Capa de color con opacidad */}
+                                <div className="absolute inset-0 bg-black/60"></div>
                             </div>
                         ))}
                     </div>
 
                     {/* Content */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="container max-w-5xl mx-auto px-4 text-center relative z-10">
+                        <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
                             <div key={currentSlide} className="animate-fadeInUp">
-                                <h1 className="hero-title text-5xl md:text-7xl font-black mb-4 text-blue-900 leading-tight">
+                                <h1 className="hero-title text-5xl md:text-7xl font-black mb-4 text-white leading-tight">
                                     {carouselSlides[currentSlide].title}
                                 </h1>
                                 {carouselSlides[currentSlide].subtitle && (
@@ -123,7 +408,7 @@ const PrincipalComponent = () => {
                                     </div>
                                 )}
 
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                                {/*<div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                                     <Button
                                         size="lg"
                                         className="text-lg px-10 py-6 bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
@@ -145,7 +430,7 @@ const PrincipalComponent = () => {
                                             Ver Propiedades
                                         </Link>
                                     </Button>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>
@@ -181,9 +466,9 @@ const PrincipalComponent = () => {
                 </section>
 
                 {/* Services Section - Navy/Gold gradient */}
-                <section className="bg-blue-950 py-20 px-4 from-white via-avanza-gold/10 to-white">
+                <section className="bg-blue-950 py-20 px-4">
                     <div>
-                        <div className="text-center mb-16 animate-fadeInUp">
+                        <div className="text-center mb-16 scroll-reveal">
                             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white hero-title">
                                 Nuestros Servicios
                             </h2>
@@ -194,21 +479,20 @@ const PrincipalComponent = () => {
 
                         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             {/* Prestamos Card - 70% focus */}
-                            <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-gold/30 hover:border-avanza-gold overflow-hidden md:col-span-2 lg:col-span-1 animate-slideInLeft">
-                                <div className="absolute inset-0 bg-gradient-to-br from-avanza-navy via-avanza-navy/95 to-avanza-navy/90 opacity-90"></div>
-                                <div className="absolute inset-0">
+                            <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-gold/30 hover:border-avanza-gold overflow-hidden md:col-span-2 lg:col-span-1 scroll-reveal-left">
+                                <div className="absolute inset-0 image-overlay">
                                     <img
-                                        src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80"
-                                        alt="Bienes Raíces"
-                                        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                                        src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&q=80"
+                                        alt="Préstamos"
+                                        className="w-full h-full object-cover parallax-image"
                                     />
                                 </div>
-                                <div className="relative z-10">
+                                <div className="image-overlay-content">
                                     <CardHeader className="text-center pb-6">
                                         <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl shimmer">
-                                            <DollarSign className="h-12 w-12 text-green-600" />
+                                            <DollarSign className="h-12 w-12 text-avanza-navy" />
                                         </div>
-                                        <CardTitle className="text-3xl font-bold text-blue-950 mb-3">
+                                        <CardTitle className="text-3xl font-bold text-white mb-3">
                                             Préstamos Rápidos
                                         </CardTitle>
                                         <CardDescription className="text-xl text-avanza-gold font-semibold">
@@ -226,7 +510,7 @@ const PrincipalComponent = () => {
                                             ].map((feature, index) => (
                                                 <div key={index} className="flex items-center text-left rounded-lg p-2">
                                                     <feature.icon className="h-5 w-5 text-avanza-gold mr-3 flex-shrink-0" />
-                                                    <span className="text-gray-700 font-medium">{feature.text}</span>
+                                                    <span className="text-white font-medium">{feature.text}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -245,38 +529,38 @@ const PrincipalComponent = () => {
                             </Card>
 
                             {/* Bienes Raices Card */}
-                            <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-navy/30 hover:border-avanza-navy overflow-hidden animate-slideInRight">
-                                <div className="absolute inset-0">
+                            <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-white/30 hover:border-white overflow-hidden scroll-reveal-right">
+                                <div className="absolute inset-0 image-overlay">
                                     <img
                                         src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
                                         alt="Bienes Raíces"
-                                        className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                                        className="w-full h-full object-cover parallax-image"
                                     />
                                 </div>
-                                <div className="relative z-10">
+                                <div className="image-overlay-content">
                                     <CardHeader className="text-center pb-6">
-                                        <div className="w-24 h-24 bg-avanza-navy rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                            <Home className="h-12 w-12 text-avanza-gold" />
+                                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                                            <Home className="h-12 w-12 text-green-800" />
                                         </div>
-                                        <CardTitle className="text-3xl font-bold text-gray-700 mb-3">
+                                        <CardTitle className="text-3xl font-bold text-white mb-3">
                                             Bienes Raíces
                                         </CardTitle>
-                                        <CardDescription className="text-xl text-gray-700 font-semibold">
+                                        <CardDescription className="text-xl text-avanza-gold font-semibold">
                                             Tu propiedad ideal te espera
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="text-center">
-                                        <p className="text-gray-700 mb-8 leading-relaxed font-medium text-lg">
+                                        <p className="text-white mb-8 leading-relaxed font-medium text-lg">
                                             Explora nuestra amplia selección de propiedades residenciales y comerciales.
                                             Desde casas familiares hasta terrenos para inversión, te ayudamos a encontrar
                                             el lugar perfecto para ti.
                                         </p>
                                         <Button
                                             asChild
-                                            className="w-full bg-avanza-navy hover:bg-avanza-navy/90 text-white font-bold text-lg py-6 shadow-xl"
+                                            className="w-full bg-white hover:bg-white/90 text-avanza-navy font-bold text-lg py-6 shadow-xl"
                                             size="lg"
                                         >
-                                            <Link to="/bienes-raices">
+                                            <Link to="/bienes-raices" className="text-green-800">
                                                 Explorar Propiedades
                                                 <ArrowRight className="ml-2 h-5 w-5" />
                                             </Link>
@@ -288,43 +572,44 @@ const PrincipalComponent = () => {
                     </div>
                 </section>
 
-                <ElegirnosComponent />
+                {/* Elegirnos Component with scroll reveal */}
+                <div className="scroll-reveal-scale">
+                    <ElegirnosComponent />
+                </div>
 
-                {/* CTA Section - Gold gradient */}
-                <section className="py-20 px-4 bg-blue-950 from-avanza-gold via-avanza-gold/90 to-avanza-gold/80 relative overflow-hidden">
+                {/* CTA Section - Navy gradient */}
+                <section className="py-20 px-4 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 relative overflow-hidden scroll-reveal">
                     {/* Decorative elements */}
                     <div className="absolute inset-0 opacity-10" style={{
-                        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(30, 58, 138, 0.1) 20px, rgba(30, 58, 138, 0.1) 40px)`
+                        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(212, 175, 55, 0.2) 20px, rgba(212, 175, 55, 0.2) 40px)`
                     }}></div>
 
-                    <div className="container max-w-4xl mx-auto text-center relative z-10">
-                        <div className="animate-fadeInUp">
-                            <div className="w-24 h-24 bg-avanza-navy rounded-full flex items-center justify-center mx-auto mb-8 animate-float shadow-2xl">
-                                <Award className="h-12 w-12 text-avanza-gold" />
-                            </div>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white hero-title">
-                                ¿Listo para Comenzar?
-                            </h2>
-                            <p className="text-xl text-amber-600 mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
-                                Nuestros asesores están listos para ayudarte a encontrar la mejor solución
-                                financiera o inmobiliaria para tus necesidades
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button
-                                    size="lg"
-                                    className="text-lg px-10 py-6 bg-avanza-navy hover:bg-avanza-navy/90 text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                                >
-                                    <Users className="mr-2 h-5 w-5" />
-                                    Hablar con un Asesor
-                                </Button>
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="text-lg px-10 py-6 bg-white border-2 border-avanza-navy text-avanza-navy hover:bg-avanza-navy hover:text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                                    asChild
-                                >
-                                </Button>
-                            </div>
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+                        <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-8 animate-float shadow-2xl">
+                            <Award className="h-12 w-12 text-avanza-navy" />
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white hero-title">
+                            ¿Listo para Comenzar?
+                        </h2>
+                        <p className="text-xl text-avanza-gold mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
+                            Nuestros asesores están listos para ayudarte a encontrar la mejor solución
+                            financiera o inmobiliaria para tus necesidades
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button
+                                size="lg"
+                                className="text-lg px-10 py-6 bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                            >
+                                <Users className="mr-2 h-5 w-5" />
+                                Hablar con un Asesor
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="text-lg px-10 py-6 bg-transparent border-2 border-white text-white hover:bg-white hover:text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                asChild
+                            >
+                            </Button>
                         </div>
                     </div>
                 </section>

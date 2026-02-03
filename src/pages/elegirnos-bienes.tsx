@@ -37,15 +37,15 @@ const ElegirnosBienesComponent = () => {
     ]
     return (
       <div>
-      <section className="py-20 px-4 bg-gradient-to-b from-[#d4af37]/10 via-[#d4af37]/5 to-white relative">
+      <section className="py-20 px-4 bg-gray-300 from-[#d4af37]/10 via-[#d4af37]/5 to-white relative">
           <div className="absolute inset-0 shimmer pointer-events-none"></div>
 
-          <div className="container relative z-10">
+          <div className="relative z-10">
               <div className="text-center mb-16">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#1e3a8a] hero-title">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-950 hero-title">
                       ¿Por Qué Elegirnos?
                   </h2>
-                  <p className="text-xl text-[#1e3a8a]/70 max-w-2xl mx-auto font-medium">
+                  <p className="text-xl text-blue-900 max-w-2xl mx-auto font-medium">
                       Ofrecemos las mejores condiciones con un servicio de excelencia
                   </p>
               </div>
@@ -62,7 +62,7 @@ const ElegirnosBienesComponent = () => {
                                   alt={benefit.title}
                                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                               />
-                              <div className="benefit-card-overlay absolute inset-0 bg-[#1e3a8a] opacity-60 transition-opacity duration-400"></div>
+                              <div className="benefit-card-overlay absolute inset-0 bg-[#1e3a8a] opacity-50 transition-opacity duration-400"></div>
 
                               <div className="absolute inset-0 flex items-center justify-center">
                                   <div className="w-20 h-20 bg-[#d4af37] rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
@@ -77,7 +77,7 @@ const ElegirnosBienesComponent = () => {
                               </CardTitle>
                           </CardHeader>
                           <CardContent className="transition-all duration-400">
-                              <p className="text-sm text-[#1e3a8a]/70 text-center leading-relaxed">
+                              <p className="text-sm text-gray-700 text-center leading-relaxed">
                                   {benefit.description}
                               </p>
                           </CardContent>

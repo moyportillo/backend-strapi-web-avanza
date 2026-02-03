@@ -21,7 +21,7 @@ const ElegirnosComponent = () => {
                         <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-blue-950 from-avanza-gold to-avanza-gold/80 text-blue-900 group animate-scaleIn">
                             <CardHeader>
                                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                    <Users className="h-10 w-10 text-avanza-gold" />
+                                    <Users className="h-10 w-10 text-blue-950" />
                                 </div>
                                 <CardTitle className="text-white text-2xl font-bold">Experiencia</CardTitle>
                             </CardHeader>
@@ -33,29 +33,29 @@ const ElegirnosComponent = () => {
                         </Card>
 
                         {/* Confianza - Navy (Center) */}
-                        <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-amber-500 from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
+                        <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-amber-600 from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
                             <CardHeader>
                                 <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                     <Shield className="h-12 w-12 text-avanza-navy" />
                                 </div>
-                                <CardTitle className="text-blue-950 text-2xl font-bold">Confianza Total</CardTitle>
+                                <CardTitle className="text-white text-2xl font-bold">Confianza Total</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-black leading-relaxed font-medium mb-4">
+                                <p className="text-white leading-relaxed font-medium mb-4">
                                     Regulados y supervisados por las máximas autoridades financieras de Honduras
                                 </p>
-                                <div className="space-y-2 text-sm text-blue-900">
+                                <div className="space-y-2 text-sm text-amber-950">
                                     <div className="flex items-center justify-center">
-                                        <BadgeCheck className="h-4 w-4 mr-2" />
-                                        <span className="font-semibold">Banco Central de Honduras</span>
+                                        <BadgeCheck className="h-6 w-6" />
+                                        <span className="font-semibold">Comisión Nacional de Banca y Seguros</span>
                                     </div>
                                     <div className="flex items-center justify-center">
-                                        <BadgeCheck className="h-4 w-4 mr-2" />
-                                        <span className="font-semibold">Comisión de Banca y Seguros</span>
-                                    </div>
-                                    <div className="flex items-center justify-center">
-                                        <BadgeCheck className="h-4 w-4 mr-2" />
+                                        <BadgeCheck className="h-6 w-6" />
                                         <span className="font-semibold">Servicio de Administración de Rentas</span>
+                                    </div>
+                                    <div className="flex items-center justify-center">
+                                        <BadgeCheck className="h-6 w-6 mr-2" />
+                                        <span className="font-semibold">Banco Central de Honduras</span>
                                     </div>
                                 </div>
                             </CardContent>
@@ -67,7 +67,7 @@ const ElegirnosComponent = () => {
                                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                                     <TrendingUp className="h-10 w-10 text-avanza-green" />
                                 </div>
-                                <CardTitle className="text-2xl font-bold text-amber-500">Resultados</CardTitle>
+                                <CardTitle className="text-2xl font-bold text-white">Resultados</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-white/90 leading-relaxed font-medium">
