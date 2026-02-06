@@ -33,10 +33,10 @@ const ElegirnosComponent = () => {
                         </Card>
 
                         {/* Confianza - Navy (Center) */}
-                        <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-amber-600 from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
+                        <Card className="text-center hover:shadow-2xl transition-all duration-500 border-0 bg-avanza-gold from-avanza-navy to-avanza-navy/90 text-white group animate-scaleIn animate-delay-100 md:-mt-4">
                             <CardHeader>
-                                <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                    <Shield className="h-12 w-12 text-avanza-navy" />
+                                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                                    <Shield className="h-12 w-12 text-avanza-gold" />
                                 </div>
                                 <CardTitle className="text-white text-2xl font-bold">Confianza Total</CardTitle>
                             </CardHeader>
@@ -44,7 +44,7 @@ const ElegirnosComponent = () => {
                                 <p className="text-white leading-relaxed font-medium mb-4">
                                     Regulados y supervisados por las máximas autoridades financieras de Honduras
                                 </p>
-                                <div className="space-y-2 text-sm text-amber-950">
+                                <div className="space-y-2 text-sm text-white">
                                     <div className="flex items-center justify-center">
                                         <BadgeCheck className="h-6 w-6" />
                                         <span className="font-semibold">Comisión Nacional de Banca y Seguros</span>

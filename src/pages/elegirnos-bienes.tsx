@@ -37,7 +37,7 @@ const ElegirnosBienesComponent = () => {
     ]
     return (
       <div>
-      <section className="py-20 px-4 bg-gray-300 from-[#d4af37]/10 via-[#d4af37]/5 to-white relative">
+      <section className="py-20 px-4 bg-gray-300 from-avanza-gold/10 via-avanza-gold/5 to-white relative">
           <div className="absolute inset-0 shimmer pointer-events-none"></div>
 
           <div className="relative z-10">
@@ -54,7 +54,7 @@ const ElegirnosBienesComponent = () => {
                   {benefits.map((benefit, i) => (
                       <Card
                           key={i}
-                          className="benefit-card overflow-hidden border-2 hover:border-[#d4af37] shadow-lg hover:shadow-2xl cursor-pointer group transition-all duration-400"
+                          className="benefit-card overflow-hidden border-2 hover:border-avanza-gold shadow-lg hover:shadow-2xl cursor-pointer group transition-all duration-400"
                       >
                           <div className="relative h-48 overflow-hidden">
                               <img
@@ -65,7 +65,7 @@ const ElegirnosBienesComponent = () => {
                               <div className="benefit-card-overlay absolute inset-0 bg-[#1e3a8a] opacity-50 transition-opacity duration-400"></div>
 
                               <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="w-20 h-20 bg-[#d4af37] rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
+                                  <div className="w-20 h-20 bg-avanza-gold rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
                                       <benefit.icon className="h-10 w-10 text-white" />
                                   </div>
                               </div>

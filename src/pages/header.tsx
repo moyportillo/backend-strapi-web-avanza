@@ -9,19 +9,19 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="px-10 flex h-16 items-center justify-between">
+            <div className="px-10 flex h-20 items-center justify-between">
 
                 {/* Logo */}
                 <Link to="/public" className="flex items-center space-x-2">
                     <img
                         src={logo64}
-                        className="h-10 w-auto"
+                        className="h-16 w-auto"
                         alt="Logo avanza"
                     />
                 </Link>
 
                 {/* Desktop Menu */}
-                <nav className="hidden md:flex items-center space-x-6">
+                <nav className="hidden md:flex items-center space-x-6 text-lg">
                     <Link to="/home" className="text-foreground/80 hover:text-foreground transition-colors">
                         Inicio
                     </Link>
@@ -31,8 +31,13 @@ const Header = () => {
                     <Link to="/bienes-raices" className="text-foreground/80 hover:text-foreground transition-colors">
                         Bienes Raíces
                     </Link>
+                    <Link to="/nosotros" className="text-foreground/80 hover:text-foreground transition-colors">
+                        Nosotros
+                    </Link>
                     <Button variant="outline" size="sm">
-                        Contacto
+                        <Link to="/contacto" className="text-foreground/80 hover:text-foreground transition-colors">
+                            Contacto
+                        </Link>
                     </Button>
                 </nav>
 
@@ -71,13 +76,20 @@ const Header = () => {
                         >
                             Bienes Raíces
                         </Link>
-                        <Button
-                            variant="outline"
-                            size="sm"
+                        <Link
+                            to="/nosotros"
                             onClick={() => setOpen(false)}
+                            className="text-foreground/80 hover:text-foreground"
                         >
-                            Contacto
-                        </Button>
+                            Nosotros
+                        </Link>
+                            <Link
+                                to="/contacto"
+                                onClick={() => setOpen(false)}
+                                className="text-foreground/80 hover:text-foreground"
+                            >
+                                Contacto
+                            </Link>
                     </nav>
                 </div>
             )}

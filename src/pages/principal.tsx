@@ -16,8 +16,10 @@ import {
     Award
 } from "lucide-react";
 import MetropolisImg from "@/assets/img/metro.jpg";
-import MoneyImg from "@/assets/img/money.jpg";
-import HomeImg from "@/assets/img/house.jpg";
+import MoneyImg from "@/assets/img/money2.jpg";
+import HomeImg from "@/assets/img/home4.jpg";
+import HomeCard from "@/assets/img/home2.jpg";
+import MoneyCard from "@/assets/img/money3.jpg";
 import { useState, useEffect } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
 
@@ -34,7 +36,7 @@ const carouselSlides: CarouselSlide[] = [
     {
         id: 1,
         image: MetropolisImg,
-        title: "AVANZA",
+        title: "AVANZA S. de RL.",
         subtitle: "Servicios Financieros y Bienes Raíces",
         icon: MapPin,
         location: "Torres Metropolis, Bulevar Suyapa, Tegucigalpa, Honduras"
@@ -48,8 +50,8 @@ const carouselSlides: CarouselSlide[] = [
     {
         id: 3,
         image: HomeImg,
-        title: "Te ayudamos con tu nuevo hogar",
-        subtitle: "Encuentra la propiedad de tus sueños"
+        title: "Encuentra tu hogar",
+        subtitle: "Te ayudamos con la propiedad de tus sueños"
     }
 ];
 
@@ -105,266 +107,6 @@ const PrincipalComponent = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-                
-                :root {
-                    --avanza-navy: #1e3a8a;
-                    --avanza-gold: #d4af37;
-                    --avanza-green: #059669;
-                }
-                
-                .avanza-navy {
-                    color: var(--avanza-navy);
-                }
-                
-                .bg-avanza-navy {
-                    background-color: var(--avanza-navy);
-                }
-                
-                .border-avanza-gold {
-                    border-color: var(--avanza-gold);
-                }
-                
-                .text-avanza-gold {
-                    color: var(--avanza-gold);
-                }
-                
-                .bg-avanza-gold {
-                    background-color: var(--avanza-gold);
-                }
-
-                .text-avanza-green {
-                    color: var(--avanza-green);
-                }
-
-                .bg-avanza-green {
-                    background-color: var(--avanza-green);
-                }
-                
-                .hero-title {
-                    font-family: 'Playfair Display', serif;
-                }
-                
-                body {
-                    font-family: 'Montserrat', sans-serif;
-                }
-
-                /* Scroll reveal animations */
-                .scroll-reveal {
-                    opacity: 0;
-                    transform: translateY(60px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .scroll-reveal.is-visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .scroll-reveal-left {
-                    opacity: 0;
-                    transform: translateX(-80px);
-                    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-                }
-
-                .scroll-reveal-left.is-visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                .scroll-reveal-right {
-                    opacity: 0;
-                    transform: translateX(80px);
-                    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-                }
-
-                .scroll-reveal-right.is-visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                .scroll-reveal-scale {
-                    opacity: 0;
-                    transform: scale(0.85);
-                    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-                }
-
-                .scroll-reveal-scale.is-visible {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-
-                /* Parallax effect for images with scroll */
-                .parallax-image {
-                    transform: scale(1);
-                    transition: transform 0.6s ease-out;
-                }
-
-                .is-visible .parallax-image {
-                    transform: scale(1.05);
-                }
-
-                .parallax-image:hover {
-                    transform: scale(1.1) !important;
-                }
-
-                /* Image overlay for better text visibility */
-                .image-overlay::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(135deg, rgba(30, 58, 138, 0.88) 0%, rgba(30, 58, 138, 0.75) 40%, rgba(212, 175, 55, 0.6) 100%);
-                    z-index: 1;
-                }
-
-                .image-overlay-content {
-                    position: relative;
-                    z-index: 2;
-                }
-
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                @keyframes slideInLeft {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-50px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes slideInRight {
-                    from {
-                        opacity: 0;
-                        transform: translateX(50px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
-
-                @keyframes scaleIn {
-                    from {
-                        opacity: 0;
-                        transform: scale(0.95);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                }
-
-                @keyframes slideChange {
-                    0% {
-                        opacity: 0;
-                        transform: scale(1.1);
-                    }
-                    100% {
-                        opacity: 1;
-                        transform: scale(1);
-                    }
-                }
-
-                .animate-fadeIn {
-                    animation: fadeIn 1s ease-out forwards;
-                }
-
-                .animate-fadeInUp {
-                    animation: fadeInUp 0.8s ease-out forwards;
-                }
-
-                .animate-slideInLeft {
-                    animation: slideInLeft 0.8s ease-out forwards;
-                }
-
-                .animate-slideInRight {
-                    animation: slideInRight 0.8s ease-out forwards;
-                }
-
-                .animate-scaleIn {
-                    animation: scaleIn 0.6s ease-out forwards;
-                }
-
-                .animate-slide-change {
-                    animation: slideChange 0.8s ease-out;
-                }
-
-                .animate-delay-100 {
-                    animation-delay: 0.1s;
-                    opacity: 0;
-                }
-
-                .animate-delay-200 {
-                    animation-delay: 0.2s;
-                    opacity: 0;
-                }
-
-                .animate-delay-300 {
-                    animation-delay: 0.3s;
-                    opacity: 0;
-                }
-
-                .animate-delay-400 {
-                    animation-delay: 0.4s;
-                    opacity: 0;
-                }
-
-                @keyframes float {
-                    0%, 100% {
-                        transform: translateY(0px);
-                    }
-                    50% {
-                        transform: translateY(-20px);
-                    }
-                }
-
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-
-                @keyframes shimmer {
-                    0% {
-                        background-position: -1000px 0;
-                    }
-                    100% {
-                        background-position: 1000px 0;
-                    }
-                }
-
-                .shimmer {
-                    background: linear-gradient(
-                        to right,
-                        transparent 0%,
-                        rgba(212, 175, 55, 0.3) 50%,
-                        transparent 100%
-                    );
-                    background-size: 1000px 100%;
-                    animation: shimmer 3s infinite;
-                }
-            `}</style>
-
             <main className="flex-1">
                 {/* Hero Section with Carousel */}
                 <section className="relative h-screen overflow-hidden">
@@ -393,44 +135,20 @@ const PrincipalComponent = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
                             <div key={currentSlide} className="animate-fadeInUp">
-                                <h1 className="hero-title text-5xl md:text-7xl font-black mb-4 text-white leading-tight">
+                                <h1 className="hero-title text-4xl md:text-7xl font-black mb-4 text-white leading-tight">
                                     {carouselSlides[currentSlide].title}
                                 </h1>
                                 {carouselSlides[currentSlide].subtitle && (
-                                    <p className="text-2xl md:text-3xl text-avanza-gold font-bold mb-8">
+                                    <p className="text-xl italic md:text-3xl text-avanza-gold font-bold mb-8">
                                         {carouselSlides[currentSlide].subtitle}
                                     </p>
                                 )}
                                 {carouselSlides[currentSlide].location && (
-                                    <div className="flex items-center justify-center text-white/90 text-xl mb-12">
+                                    <div className="flex items-center justify-center text-white/90 md:text-xl mb-12">
                                         <MapPin className="h-6 w-6 mr-2 text-avanza-gold" />
                                         {carouselSlides[currentSlide].location}
                                     </div>
                                 )}
-
-                                {/*<div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                                    <Button
-                                        size="lg"
-                                        className="text-lg px-10 py-6 bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                                        asChild
-                                    >
-                                        <Link to="/prestamos">
-                                            <DollarSign className="mr-2 h-5 w-5" />
-                                            Solicitar Préstamo
-                                        </Link>
-                                    </Button>
-                                    <Button
-                                        size="lg"
-                                        variant="outline"
-                                        className="text-lg px-10 py-6 border-2 border-white text-green-800 hover:bg-white hover:text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
-                                        asChild
-                                    >
-                                        <Link to="/bienes-raices">
-                                            <Home className="mr-2 h-5 w-5" />
-                                            Ver Propiedades
-                                        </Link>
-                                    </Button>
-                                </div>*/}
                             </div>
                         </div>
                     </div>
@@ -482,15 +200,15 @@ const PrincipalComponent = () => {
                             <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-gold/30 hover:border-avanza-gold overflow-hidden md:col-span-2 lg:col-span-1 scroll-reveal-left">
                                 <div className="absolute inset-0 image-overlay">
                                     <img
-                                        src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&q=80"
+                                        src={MoneyCard}
                                         alt="Préstamos"
                                         className="w-full h-full object-cover parallax-image"
                                     />
                                 </div>
                                 <div className="image-overlay-content">
                                     <CardHeader className="text-center pb-6">
-                                        <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl shimmer">
-                                            <DollarSign className="h-12 w-12 text-avanza-navy" />
+                                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                                            <DollarSign className="h-12 w-12 text-blue-950" />
                                         </div>
                                         <CardTitle className="text-3xl font-bold text-white mb-3">
                                             Préstamos Rápidos
@@ -500,7 +218,7 @@ const PrincipalComponent = () => {
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="text-center">
-                                        <div className="space-y-4 mb-8">
+                                        <div className="space-y-3 mb-8">
                                             {[
                                                 { icon: Award, text: "Avalúo completamente GRATIS" },
                                                 { icon: Clock, text: "Aprobación en solo 48 horas" },
@@ -516,10 +234,10 @@ const PrincipalComponent = () => {
                                         </div>
                                         <Button
                                             asChild
-                                            className="w-full bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold text-lg py-6 shadow-xl"
+                                            className="w-full bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold md:text-lg py-6 shadow-xl"
                                             size="lg"
                                         >
-                                            <Link to="/prestamos">
+                                            <Link to="/prestamos" className="text-blue-950">
                                                 Solicitar Préstamo Ahora
                                                 <ArrowRight className="ml-2 h-5 w-5" />
                                             </Link>
@@ -532,7 +250,7 @@ const PrincipalComponent = () => {
                             <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-white/30 hover:border-white overflow-hidden scroll-reveal-right">
                                 <div className="absolute inset-0 image-overlay">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                                        src={HomeCard}
                                         alt="Bienes Raíces"
                                         className="w-full h-full object-cover parallax-image"
                                     />
@@ -550,14 +268,14 @@ const PrincipalComponent = () => {
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="text-center">
-                                        <p className="text-white mb-8 leading-relaxed font-medium text-lg">
+                                        <p className="text-white mb-8 leading-relaxed font-medium md:text-lg">
                                             Explora nuestra amplia selección de propiedades residenciales y comerciales.
                                             Desde casas familiares hasta terrenos para inversión, te ayudamos a encontrar
                                             el lugar perfecto para ti.
                                         </p>
                                         <Button
                                             asChild
-                                            className="w-full bg-white hover:bg-white/90 text-avanza-navy font-bold text-lg py-6 shadow-xl"
+                                            className="w-full bg-white hover:bg-white/90 text-avanza-navy font-bold md:text-lg py-6 shadow-xl"
                                             size="lg"
                                         >
                                             <Link to="/bienes-raices" className="text-green-800">
@@ -578,27 +296,27 @@ const PrincipalComponent = () => {
                 </div>
 
                 {/* CTA Section - Navy gradient */}
-                <section className="py-20 px-4 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 relative overflow-hidden scroll-reveal">
+                <section className="py-20 px-4 bg-avanza-gold to-amber-600 relative overflow-hidden scroll-reveal">
                     {/* Decorative elements */}
                     <div className="absolute inset-0 opacity-10" style={{
                         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(212, 175, 55, 0.2) 20px, rgba(212, 175, 55, 0.2) 40px)`
                     }}></div>
 
                     <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-8 animate-float shadow-2xl">
-                            <Award className="h-12 w-12 text-avanza-navy" />
+                        <div className="w-24 h-24 bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-8 animate-float shadow-2xl">
+                            <Award className="h-12 w-12 text-avanza-gold" />
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white hero-title">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-700 hero-title">
                             ¿Listo para Comenzar?
                         </h2>
-                        <p className="text-xl text-avanza-gold mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
+                        <p className="md:text-xl text-gray-700 mb-10 max-w-2xl mx-auto font-semibold leading-relaxed">
                             Nuestros asesores están listos para ayudarte a encontrar la mejor solución
                             financiera o inmobiliaria para tus necesidades
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button
                                 size="lg"
-                                className="text-lg px-10 py-6 bg-avanza-gold hover:bg-avanza-gold/90 text-avanza-navy font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                className="md:text-lg px-10 py-6 bg-blue-950 hover:bg-blue-900 text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                             >
                                 <Users className="mr-2 h-5 w-5" />
                                 Hablar con un Asesor

@@ -157,7 +157,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
     }
 
     return (
-        <div className={`animate-on-scroll-scale ${isVisible ? 'visible' : ''}`}>
+        <div className={`md:animate-on-scroll-scale ${isVisible ? 'visible' : ''}`}>
             <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 hover:border-amber-500/50 h-full">
                 <div className="relative h-64 overflow-hidden bg-blue-950/5">
                     <img
@@ -189,7 +189,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                                         key={index}
                                         className={`h-1.5 rounded-full transition-all ${
                                             index === currentImageIndex
-                                                ? "w-6 bg-amber-500"
+                                                ? "w-6 bg-avanza-gold"
                                                 : "w-1.5 bg-white/60"
                                         }`}
                                     />
@@ -227,7 +227,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                             {property.title}
                         </CardTitle>
                         <CardDescription className="flex items-center text-base">
-                            <MapPin className="h-4 w-4 mr-1.5 text-amber-500" />
+                            <MapPin className="h-4 w-4 mr-1.5 text-avanza-gold" />
                             {property.location}
                         </CardDescription>
                     </div>
@@ -238,18 +238,18 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                     <div className="flex flex-wrap gap-4 text-sm text-blue-950/70">
                         {property.bedrooms && (
                             <div className="flex items-center font-medium">
-                                <Bed className="h-4 w-4 mr-1.5 text-amber-500" />
+                                <Bed className="h-4 w-4 mr-1.5 text-avanza-gold" />
                                 {property.bedrooms} hab
                             </div>
                         )}
                         {property.bathrooms && (
                             <div className="flex items-center font-medium">
-                                <Bath className="h-4 w-4 mr-1.5 text-amber-500" />
+                                <Bath className="h-4 w-4 mr-1.5 text-avanza-gold" />
                                 {property.bathrooms} baños
                             </div>
                         )}
                         <div className="flex items-center font-medium">
-                            <Square className="h-4 w-4 mr-1.5 text-amber-500" />
+                            <Square className="h-4 w-4 mr-1.5 text-avanza-gold" />
                             {property.area}
                         </div>
                     </div>
@@ -261,7 +261,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
 
                     {/* Price */}
                     <div className="pt-2">
-                        <span className="text-3xl font-bold text-amber-600">
+                        <span className="text-3xl font-bold text-avanza-gold">
                             {property.price}
                         </span>
                     </div>
@@ -273,7 +273,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                         </Button>
                         <Button
                             variant="outline"
-                            className="flex-1 border-2 border-amber-500 text-blue-950 hover:bg-amber-500 hover:text-white font-semibold"
+                            className="flex-1 border-2 border-avanza-gold text-blue-950 hover:bg-avanza-gold hover:text-blue-950 font-semibold"
                         >
                             Contactar
                         </Button>
@@ -366,75 +366,6 @@ const BienesRaicesPage = () => {
 
     return (
         <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-amber-50/30 to-white">
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700;800&display=swap');
-                
-                :root {
-                    --avanza-navy: #1e3a8a;
-                    --avanza-gold: #d4af37;
-                    --avanza-green: #059669;
-                }
-                
-                .hero-title {
-                    font-family: 'Playfair Display', serif;
-                }
-                
-                body {
-                    font-family: 'Montserrat', sans-serif;
-                }
-
-                .animate-on-scroll {
-                    opacity: 0;
-                    transform: translateY(30px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll.visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .animate-on-scroll-scale {
-                    opacity: 0;
-                    transform: scale(0.95);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll-scale.visible {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
-
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-
-                .service-card {
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .service-card::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                    transition: left 0.5s;
-                }
-
-                .service-card:hover::before {
-                    left: 100%;
-                }
-            `}</style>
-
             <main className="flex-1">
                 {/* Hero Section */}
                 <section
@@ -452,7 +383,7 @@ const BienesRaicesPage = () => {
                         <div className={`animate-on-scroll ${isVisible.hero ? 'visible' : ''}`}>
                             <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-blue-950 leading-tight">
                                 Encuentra tu
-                                <span className="block text-amber-600 mt-2">Hogar Ideal</span>
+                                <span className="block text-avanza-gold mt-2">Hogar Ideal</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
                                 Explora nuestra selección de propiedades premium en las mejores ubicaciones de Honduras.
@@ -561,7 +492,7 @@ const BienesRaicesPage = () => {
                             <h2 className="text-4xl md:text-5xl font-bold text-blue-950 mb-4 hero-title">
                                 Nuestros Servicios
                             </h2>
-                            <p className="text-xl text-blue-950/70 max-w-2xl mx-auto font-medium">
+                            <p className="md:text-xl text-blue-950/70 max-w-2xl mx-auto font-medium">
                                 Te acompañamos en cada paso de tu inversión inmobiliaria
                             </p>
                         </div>
@@ -575,14 +506,14 @@ const BienesRaicesPage = () => {
                                 >
                                     <Card className={`text-center hover:shadow-2xl transition-all duration-500 border-0 group h-full ${
                                         service.color === 'blue' ? 'bg-gradient-to-br from-blue-950 to-blue-900' :
-                                            service.color === 'gold' ? 'bg-gradient-to-br from-amber-500 to-amber-600' :
-                                                'bg-gradient-to-br from-emerald-600 to-emerald-700'
+                                            service.color === 'gold' ? 'bg-avanza-gold to-amber-600' :
+                                                'bg-gradient-to-br from-emerald-800 to-emerald-700'
                                     }`}>
                                         <CardHeader className="pb-4">
                                             <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl bg-white`}>
                                                 <service.icon className={`h-10 w-10 ${
                                                     service.color === 'blue' ? 'text-blue-950' :
-                                                        service.color === 'gold' ? 'text-amber-500' :
+                                                        service.color === 'gold' ? 'text-avanza-gold' :
                                                             'text-emerald-600'
                                                 }`} />
                                             </div>
@@ -595,7 +526,7 @@ const BienesRaicesPage = () => {
                                                 {service.description}
                                             </p>
                                             <div className={`h-1 w-16 mx-auto mt-6 rounded-full ${
-                                                service.color === 'blue' ? 'bg-amber-400' :
+                                                service.color === 'blue' ? 'bg-avanza-gold' :
                                                     service.color === 'gold' ? 'bg-blue-950' :
                                                         'bg-white'
                                             }`}></div>
