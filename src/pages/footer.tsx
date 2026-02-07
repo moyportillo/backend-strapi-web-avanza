@@ -20,7 +20,7 @@ export const FooterComponent: React.FC = () => {
                         <li className="flex space-x-3"><CalendarIcon size={20}/><p>Lunes a Viernes - 9:00 am - 5:00 pm</p></li>
                         <li className="pl-8">Sabados - 9:00 am - 12:00 pm</li>
                         <li className="flex space-x-3"><Phone size={20}/><p>+504 2270-6318 / +504 8820-3559</p></li>
-                        <li className="flex space-x-3"><MapPin size={20}/><p>Torre Metropolis, Bulevar Suyapa, Tegucigalpa, Francisco Morazan, Honduras</p></li>
+                        <li className="flex space-x-3"><MapPin size={20}/><p>Torre Metropolis, Bulevar Suyapa, Tegucigalpa, Francisco Morazán, Honduras</p></li>
                     </ul>
                 </div>
 
