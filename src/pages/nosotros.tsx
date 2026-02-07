@@ -18,6 +18,7 @@ import {
 import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import HoverImg from "@/assets/img/metropolis.jpeg"
+import LogoImg from "@/assets/img/logo-full.png"
 
 const NosotrosPage = () => {
     const [isVisible, setIsVisible] = useState({
@@ -244,9 +245,8 @@ const NosotrosPage = () => {
                             <div className={`animate-slide-left ${isVisible.history ? 'visible' : ''}`}>
                                 <div className="relative">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                                        src={LogoImg}
                                         alt="Historia AVANZA"
-                                        className="rounded-2xl shadow-2xl"
                                     />
                                     <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-avanza-gold rounded-2xl -z-10"></div>
                                     <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-950 rounded-2xl -z-10"></div>
