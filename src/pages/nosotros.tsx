@@ -92,8 +92,8 @@ const NosotrosPage = () => {
         },
         {
             icon: Zap,
-            title: "Innovación",
-            description: "Adoptamos las mejores prácticas y tecnologías para ofrecer soluciones financieras modernas y eficientes.",
+            title: "Seguridad",
+            description: "Operamos con transparencia y cumplimiento normativo, alineados con las regulaciones del Banco Central de Honduras (BCH), SAR y la CNBS, brindando confianza y respaldo en cada operación.",
             color: "green"
         },
         {
@@ -108,14 +108,6 @@ const NosotrosPage = () => {
         <div className="min-h-screen flex flex-col">
             <style>{`
                 
-                .hero-title {
-                    font-family: 'Playfair Display', serif;
-                }
-                
-                body {
-                    font-family: 'Montserrat', sans-serif;
-                }
-
                 .animate-on-scroll {
                     opacity: 0;
                     transform: translateY(30px);
@@ -220,7 +212,7 @@ const NosotrosPage = () => {
                         <div className="absolute bottom-20 left-20 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl"></div>
                     </div>
 
-                    <div className="container max-w-5xl mx-auto px-4 text-center relative z-10">
+                    <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
                         <div className={`animate-on-scroll ${isVisible.hero ? 'visible' : ''}`}>
                             <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-white leading-tight">
                                 Sobre
@@ -240,7 +232,7 @@ const NosotrosPage = () => {
                     data-section="history"
                     className="py-20 px-4 bg-white"
                 >
-                    <div className="container max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className={`animate-slide-left ${isVisible.history ? 'visible' : ''}`}>
                                 <div className="relative">
@@ -248,7 +240,7 @@ const NosotrosPage = () => {
                                         src={LogoImg}
                                         alt="Historia AVANZA"
                                     />
-                                    <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-avanza-gold rounded-2xl -z-10"></div>
+                                    <div className="absolute -bottom-16 -right-6 w-28 h-28 bg-avanza-gold rounded-2xl -z-10"></div>
                                     <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-950 rounded-2xl -z-10"></div>
                                 </div>
                             </div>
@@ -298,7 +290,7 @@ const NosotrosPage = () => {
                         backgroundSize: '40px 40px'
                     }}></div>
 
-                    <div className="container max-w-6xl mx-auto relative z-10">
+                    <div className="max-w-6xl mx-auto relative z-10">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className={`animate-slide-left ${isVisible.mission ? 'visible' : ''}`}>
                                 <div className="flex items-center gap-4 mb-6">
@@ -353,7 +345,7 @@ const NosotrosPage = () => {
                         <div className="absolute bottom-10 left-20 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
                     </div>
 
-                    <div className="container max-w-6xl mx-auto relative z-10">
+                    <div className="max-w-6xl mx-auto relative z-10">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className={`animate-slide-left ${isVisible.vision ? 'visible' : ''} order-2 md:order-1`}>
                                 <div className="relative">
@@ -402,7 +394,7 @@ const NosotrosPage = () => {
                     data-section="values"
                     className="py-20 px-4 bg-white"
                 >
-                    <div className="container max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
                         <div className={`text-center mb-16 animate-on-scroll ${isVisible.values ? 'visible' : ''}`}>
                             <h2 className="text-4xl md:text-5xl font-bold text-blue-950 mb-4 hero-title">
                                 Nuestros Valores
@@ -421,7 +413,7 @@ const NosotrosPage = () => {
                                 >
                                     <Card className={`text-center hover:shadow-2xl transition-all duration-500 border-0 h-full ${
                                         value.color === 'blue' ? 'bg-gradient-to-br from-blue-950 to-blue-900' :
-                                            value.color === 'gold' ? 'bg-gradient-to-br from-[#d4af37] to-amber-600' :
+                                            value.color === 'gold' ? 'bg-avanza-gold' :
                                                 'bg-gradient-to-br from-green-800 to-emerald-700'
                                     }`}>
                                         <CardHeader className="pb-4">
@@ -456,26 +448,28 @@ const NosotrosPage = () => {
                 <section
                     ref={ctaRef}
                     data-section="cta"
-                    className="py-20 px-4 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 text-white relative overflow-hidden"
+                    className="py-20 px-4 bg-avanza-gold relative overflow-hidden"
                 >
                     {/* Decorative Elements */}
-                    <div className="absolute inset-0 pointer-events-none">
-                        <div className="absolute top-20 right-20 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-                        <div className="absolute bottom-20 left-20 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl"></div>
-                    </div>
+                    <div className="absolute inset-0 opacity-10" style={{
+                        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(30, 58, 138, 0.1) 20px, rgba(30, 58, 138, 0.1) 40px)`
+                    }}></div>
 
-                    <div className="container max-w-4xl mx-auto text-center relative z-10">
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className={`animate-on-scroll ${isVisible.cta ? 'visible' : ''}`}>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6 hero-title">
+                            <div className="w-24 h-24 bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-float">
+                                <Handshake className="h-12 w-12 text-avanza-gold" />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 hero-title text-blue-950">
                                 ¿Listo para Comenzar?
                             </h2>
-                            <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto font-medium leading-relaxed">
+                            <p className="text-xl mb-10 text-gray-700 font-semibold max-w-2xl mx-auto leading-relaxed">
                                 Únete a miles de clientes satisfechos que han confiado en AVANZA para alcanzar sus metas financieras e inmobiliarias
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Button
                                     size="lg"
-                                    className="text-lg px-10 py-6 bg-avanza-gold hover:bg-amber-400 text-blue-950 font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                    className="text-lg px-10 py-6 bg-blue-950 hover:bg-blue-900 text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                                     asChild
                                 >
                                     <Link to="/prestamos">
@@ -486,7 +480,7 @@ const NosotrosPage = () => {
                                 <Button
                                     size="lg"
                                     variant="outline"
-                                    className="text-lg px-10 py-6 bg-white border-2 border-white text-blue-950 hover:bg-transparent hover:text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
+                                    className="text-lg px-10 py-6 bg-white border-2 border-white text-blue-950 hover:text-blue-950 font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                                     asChild
                                 >
                                     <Link to="/bienes-raices">

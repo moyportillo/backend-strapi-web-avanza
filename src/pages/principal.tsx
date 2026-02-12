@@ -18,8 +18,8 @@ import {
 import MetropolisImg from "@/assets/img/metro.jpg";
 import MoneyImg from "@/assets/img/money2.jpg";
 import HomeImg from "@/assets/img/home4.jpg";
-import HomeCard from "@/assets/img/home2.jpg";
-import MoneyCard from "@/assets/img/money3.jpg";
+import HomeCard from "@/assets/img/house.jpg";
+import MoneyCard from "@/assets/img/money4.jpeg";
 import { useState, useEffect } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
 
@@ -36,7 +36,7 @@ const carouselSlides: CarouselSlide[] = [
     {
         id: 1,
         image: MetropolisImg,
-        title: "AVANZA S. de RL.",
+        title: "AVANZA",
         subtitle: "Servicios Financieros y Bienes Raíces",
         icon: MapPin,
         location: "Torres Metropolis, Bulevar Suyapa, Tegucigalpa, Honduras"
@@ -208,7 +208,7 @@ const PrincipalComponent = () => {
                                 <div className="image-overlay-content">
                                     <CardHeader className="text-center pb-6">
                                         <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                                            <DollarSign className="h-12 w-12 text-blue-950" />
+                                            <DollarSign className="h-12 w-12 text-avanza-gold" />
                                         </div>
                                         <CardTitle className="text-3xl font-bold text-white mb-3">
                                             Préstamos Rápidos

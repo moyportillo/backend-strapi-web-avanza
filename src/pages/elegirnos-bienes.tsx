@@ -12,8 +12,8 @@ const ElegirnosBienesComponent = () => {
     const benefits: Benefit[] = [
         {
             icon: Clock,
-            title: "Aprobación Rápida",
-            description: "Respuesta en menos de 24 horas",
+            title: "Horarios flexibles",
+            description: "Nos adaptamos a tu disponibilidad para mostrarte las propiedades cuando más te convenga.",
             image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80"
         },
         {

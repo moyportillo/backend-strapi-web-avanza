@@ -17,6 +17,7 @@ import {
 //import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
+import {Link} from "react-router-dom";
 
 type LoanType = {
     id: number
@@ -104,7 +105,7 @@ const PrestamosPage = () => {
                 <section
                     ref={heroRef}
                     data-section="hero"
-                    className="py-20 px-4 bg-gradient-to-br from-white via-amber-50 to-white relative overflow-hidden"
+                    className="py-20 px-4 bg-white relative overflow-hidden"
                 >
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-20 right-10 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl"></div>
@@ -117,7 +118,7 @@ const PrestamosPage = () => {
                                 Préstamos que
                                 <span className="block text-avanza-gold mt-2">Hacen Realidad tus Sueños</span>
                             </h1>
-                            <p className="text-lg md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+                            <p className="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
                                 Obtén el financiamiento que necesitas con tasas competitivas y procesos rápidos
                             </p>
                         </div>
@@ -250,15 +251,17 @@ const PrestamosPage = () => {
                         </div>
 
                         <div className={`text-center mt-12 animate-on-scroll ${isVisible.requirements ? 'visible' : ''}`} style={{ transitionDelay: '450ms' }}>
-                            <p className="text-avanza-gold text-lg font-semibold mb-6">
+                            <p className="text-blue-950 text-lg font-semibold mb-6">
                                 ¡Es así de simple! Sin complicaciones ni trámites extensos
                             </p>
                             <Button
                                 size="lg"
                                 className="bg-avanza-gold hover:bg-avanza-gold text-blue-950 font-bold md:text-lg px-10 py-6 shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                             >
+                                <Link to="/contacto" className="flex items-center text-blue-950">
                                 <ArrowRight className="mr-2 h-5 w-5" />
                                 Comenzar Solicitud
+                                    </Link>
                             </Button>
                         </div>
                     </div>
@@ -352,8 +355,10 @@ const PrestamosPage = () => {
                                 size="lg"
                                 className="md:text-lg px-12 py-6 bg-blue-950 hover:bg-blue-900 text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
                             >
+                                <Link to="/contacto" className="flex items-center">
                                 <Send className="mr-2 h-5 w-5" />
                                 Solicitar Préstamo Ahora
+                                </Link>
                             </Button>
                         </div>
                     </div>
