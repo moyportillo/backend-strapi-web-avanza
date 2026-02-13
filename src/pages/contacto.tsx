@@ -122,114 +122,6 @@ const ContactoPage = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <style>{`
-
-                .animate-on-scroll {
-                    opacity: 0;
-                    transform: translateY(30px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll.visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .animate-on-scroll-scale {
-                    opacity: 0;
-                    transform: scale(0.95);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll-scale.visible {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-
-                .animate-slide-left {
-                    opacity: 0;
-                    transform: translateX(-50px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-slide-left.visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                .animate-slide-right {
-                    opacity: 0;
-                    transform: translateX(50px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-slide-right.visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-15px); }
-                }
-
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-
-                @keyframes pulse-glow {
-                    0%, 100% {
-                        box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-                    }
-                    50% {
-                        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
-                    }
-                }
-
-                .pulse-glow {
-                    animation: pulse-glow 2s infinite;
-                }
-
-                .contact-card {
-                    position: relative;
-                    overflow: hidden;
-                }
-
-                .contact-card::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                    transition: left 0.5s;
-                }
-
-                .contact-card:hover::before {
-                    left: 100%;
-                }
-
-                @keyframes success {
-                    0%, 100% { transform: scale(1); }
-                    50% { transform: scale(1.05); }
-                }
-
-                .animate-success {
-                    animation: success 0.5s ease-out;
-                }
-
-                .accordion-content {
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.5s ease-out;
-                }
-
-                .accordion-content.open {
-                    max-height: 2000px;
-                }
-            `}</style>
-
             <main className="flex-1">
                 {/* Hero Section */}
                 <section
@@ -255,7 +147,7 @@ const ContactoPage = () => {
 
                     <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
                         <div className={`animate-on-scroll ${isVisible.hero ? 'visible' : ''}`}>
-                            <div className="w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-float">
+                            <div className="w-24 h-24 bg-avanza-gold rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-float">
                                 <MessageSquare className="h-12 w-12 text-blue-950" />
                             </div>
                             <h1 className="hero-title text-5xl md:text-7xl font-black mb-6 text-white leading-tight">
@@ -264,7 +156,7 @@ const ContactoPage = () => {
                             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
                                 Estamos aquí para ayudarte. Comunícate con nosotros y un asesor te atenderá de inmediato.
                             </p>
-                            <div className="h-1 w-32 mx-auto bg-gradient-to-r from-amber-400 to-emerald-500 rounded-full"></div>
+                            <div className="h-1 w-32 mx-auto bg-gradient-avanza from-avanza-gold to-avanza-navy rounded-full"></div>
                         </div>
                     </div>
                 </section>
@@ -285,11 +177,11 @@ const ContactoPage = () => {
                                 href="tel:+50422706318"
                                 className="block"
                             >
-                                <Card className="bg-gradient-to-br from-amber-500 to-amber-600 border-0 hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer pulse-glow">
+                                <Card className="bg-gradient-avanza from-avanza-gold to-amber-600 border-0 hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer pulse-glow">
                                     <CardContent className="pt-8 pb-8">
                                         <div className="text-center">
                                             <div className="w-20 h-20 bg-blue-950 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
-                                                <Phone className="h-10 w-10 text-amber-400" />
+                                                <Phone className="h-10 w-10 text-avanza-gold" />
                                             </div>
                                             <h3 className="text-2xl font-bold text-blue-950 mb-2">
                                                 Llámanos
@@ -385,7 +277,7 @@ const ContactoPage = () => {
                                     </div>
                                     <div className="bg-gradient-to-r from-blue-950 to-blue-900 p-6 text-white">
                                         <div className="flex items-start gap-4">
-                                            <MapPin className="h-8 w-8 text-amber-400 flex-shrink-0 mt-1" />
+                                            <MapPin className="h-8 w-8 text-avanza-gold flex-shrink-0 mt-1" />
                                             <div>
                                                 <h3 className="text-2xl font-bold mb-2">AVANZA - Oficina Principal</h3>
                                                 <p className="text-white/90 text-lg leading-relaxed">
@@ -402,7 +294,7 @@ const ContactoPage = () => {
                                 <Card className="border-2 border-blue-950/10 bg-gradient-to-br from-blue-950 to-blue-900 shadow-2xl shadow-gray-800 text-white">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-3 text-2xl">
-                                            <Clock className="h-7 w-7 text-amber-400" />
+                                            <Clock className="h-7 w-7 text-avanza-gold" />
                                             Horario de Atención
                                         </CardTitle>
                                     </CardHeader>
@@ -411,7 +303,7 @@ const ContactoPage = () => {
                                             {officeHours.map((schedule, index) => (
                                                 <div key={index} className="flex justify-between items-center py-2 border-b border-white/20 last:border-0">
                                                     <span className="font-semibold">{schedule.day}</span>
-                                                    <span className="text-amber-400 font-bold">{schedule.hours}</span>
+                                                    <span className="text-avanza-gold font-bold">{schedule.hours}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -424,7 +316,7 @@ const ContactoPage = () => {
                                     >
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-3">
-                                                <Send className="h-8 w-8 text-amber-400" />
+                                                <Send className="h-8 w-8 text-avanza-gold" />
                                                 <div>
                                                     <CardTitle className="text-3xl font-bold">
                                                         Envíanos un Mensaje
@@ -436,9 +328,9 @@ const ContactoPage = () => {
                                             </div>
                                             <div>
                                                 {isFormOpen ? (
-                                                    <ChevronUp className="h-8 w-8 text-amber-400" />
+                                                    <ChevronUp className="h-8 w-8 text-avanza-gold" />
                                                 ) : (
-                                                    <ChevronDown className="h-8 w-8 text-amber-400" />
+                                                    <ChevronDown className="h-8 w-8 text-avanza-gold" />
                                                 )}
                                             </div>
                                         </div>
@@ -458,7 +350,7 @@ const ContactoPage = () => {
                                             <form onSubmit={handleSubmit} className="space-y-6">
                                                 <div>
                                                     <label className="flex items-center text-sm font-semibold mb-2 text-blue-950">
-                                                        <User className="h-4 w-4 mr-2 text-amber-500" />
+                                                        <User className="h-4 w-4 mr-2 text-avanza-gold" />
                                                         Nombre Completo *
                                                     </label>
                                                     <Input
@@ -474,7 +366,7 @@ const ContactoPage = () => {
 
                                                 <div>
                                                     <label className="flex items-center text-sm font-semibold mb-2 text-blue-950">
-                                                        <Mail className="h-4 w-4 mr-2 text-amber-500" />
+                                                        <Mail className="h-4 w-4 mr-2 text-avanza-gold" />
                                                         Correo Electrónico *
                                                     </label>
                                                     <Input
@@ -490,7 +382,7 @@ const ContactoPage = () => {
 
                                                 <div>
                                                     <label className="flex items-center text-sm font-semibold mb-2 text-blue-950">
-                                                        <Phone className="h-4 w-4 mr-2 text-amber-500" />
+                                                        <Phone className="h-4 w-4 mr-2 text-avanza-gold" />
                                                         Teléfono *
                                                     </label>
                                                     <Input
@@ -506,7 +398,7 @@ const ContactoPage = () => {
 
                                                 <div>
                                                     <label className="flex items-center text-sm font-semibold mb-2 text-blue-950">
-                                                        <Building2 className="h-4 w-4 mr-2 text-amber-500" />
+                                                        <Building2 className="h-4 w-4 mr-2 text-avanza-gold" />
                                                         Asunto *
                                                     </label>
                                                     <Input
@@ -522,7 +414,7 @@ const ContactoPage = () => {
 
                                                 <div>
                                                     <label className="flex items-center text-sm font-semibold mb-2 text-blue-950">
-                                                        <MessageSquare className="h-4 w-4 mr-2 text-amber-500" />
+                                                        <MessageSquare className="h-4 w-4 mr-2 text-avanza-gold" />
                                                         Mensaje *
                                                     </label>
                                                     <Textarea
@@ -566,7 +458,7 @@ const ContactoPage = () => {
                 <section
                     ref={socialRef}
                     data-section="social"
-                    className="py-20 px-4 bg-gradient-to-br from-amber-500 to-amber-600 relative overflow-hidden"
+                    className="py-20 px-4 bg-avanza-gold relative overflow-hidden"
                 >
                     <div className="absolute inset-0 opacity-10" style={{
                         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(30, 58, 138, 0.1) 20px, rgba(30, 58, 138, 0.1) 40px)`

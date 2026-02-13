@@ -35,7 +35,7 @@ const properties: Property[] = [
     {
         id: 1,
         title: "Casa Moderna en Zona Residencial Premium",
-        price: "$450,000",
+        price: "L. 450,000",
         location: "Colonia Del Valle, Tegucigalpa",
         bedrooms: 3,
         bathrooms: 2,
@@ -51,7 +51,7 @@ const properties: Property[] = [
     {
         id: 2,
         title: "Casa Familiar con Jardín Amplio",
-        price: "$380,000",
+        price: "L. 380,000",
         location: "Residencial El Trapiche, Tegucigalpa",
         bedrooms: 4,
         bathrooms: 3,
@@ -67,7 +67,7 @@ const properties: Property[] = [
     {
         id: 3,
         title: "Casa en Condominio Privado",
-        price: "$290,000",
+        price: "L. 290,000",
         location: "Lomas del Guijarro, Tegucigalpa",
         bedrooms: 3,
         bathrooms: 2,
@@ -83,7 +83,7 @@ const properties: Property[] = [
     {
         id: 4,
         title: "Terreno Residencial con Todos los Servicios",
-        price: "$85,000",
+        price: "L. 85,000",
         location: "Valle de Ángeles, Francisco Morazán",
         area: "500 m²",
         type: "Terreno",
@@ -97,7 +97,7 @@ const properties: Property[] = [
     {
         id: 5,
         title: "Amplio Terreno Comercial Céntrico",
-        price: "$150,000",
+        price: "L. 150,000",
         location: "Boulevard Morazán, Tegucigalpa",
         area: "800 m²",
         type: "Terreno",
@@ -111,7 +111,7 @@ const properties: Property[] = [
     {
         id: 6,
         title: "Casa de Lujo con Vista Panorámica",
-        price: "$650,000",
+        price: "L.650,000",
         location: "Las Colinas, Tegucigalpa",
         bedrooms: 5,
         bathrooms: 4,
@@ -127,7 +127,7 @@ const properties: Property[] = [
     {
         id: 7,
         title: "Apartamento en Renta",
-        price: "$800/mes",
+        price: "L. 800/mes",
         location: "Colonia Palmira, Tegucigalpa",
         bedrooms: 2,
         bathrooms: 1,

@@ -39,12 +39,6 @@ const loanTypes: LoanType[] = [
         description: "Aprovecha el valor de un terreno para obtener liquidez inmediata. Procesos ágiles y flexibles.",
         icon: MapPin,
     },
-    {
-        id: 3,
-        title: "Préstamos con Garantía de Vehículo",
-        description: "Usa un vehículo como garantía. El vehículo queda bajo custodia durante la vigencia del financiamiento.",
-        icon: Car,
-    },
 ]
 
 const PrestamosPage = () => {
@@ -283,7 +277,7 @@ const PrestamosPage = () => {
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             {loanTypes.map((loan, index) => (
                                 <div
                                     key={loan.id}

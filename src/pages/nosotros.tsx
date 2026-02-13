@@ -106,89 +106,6 @@ const NosotrosPage = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <style>{`
-                
-                .animate-on-scroll {
-                    opacity: 0;
-                    transform: translateY(30px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll.visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-                .animate-on-scroll-scale {
-                    opacity: 0;
-                    transform: scale(0.95);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-on-scroll-scale.visible {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-
-                .animate-slide-left {
-                    opacity: 0;
-                    transform: translateX(-50px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-slide-left.visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                .animate-slide-right {
-                    opacity: 0;
-                    transform: translateX(50px);
-                    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-                }
-
-                .animate-slide-right.visible {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-20px); }
-                }
-
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-
-                @keyframes pulse {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.7; }
-                }
-
-                .animate-pulse-slow {
-                    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                }
-
-                .parallax-bg {
-                    background-attachment: fixed;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                @keyframes shimmer {
-                    0% { background-position: -1000px 0; }
-                    100% { background-position: 1000px 0; }
-                }
-
-                .shimmer {
-                    background: linear-gradient(to right, transparent 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%);
-                    background-size: 1000px 100%;
-                    animation: shimmer 3s infinite;
-                }
-            `}</style>
-
             <main className="flex-1">
                 {/* Hero Section */}
                 <section
@@ -221,7 +138,7 @@ const NosotrosPage = () => {
                             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
                                 Más de 20 años construyendo sueños y transformando vidas a través de soluciones financieras e inmobiliarias
                             </p>
-                            <div className="h-1 w-32 mx-auto bg-gradient-to-r from-amber-400 to-emerald-500 rounded-full"></div>
+                            <div className="h-1 w-32 mx-auto bg-gradient-avanza from-avanza-gold to-avanza-navy rounded-full"></div>
                         </div>
                     </div>
                 </section>
@@ -254,7 +171,7 @@ const NosotrosPage = () => {
                                 </div>
                                 <div className="space-y-4 text-gray-700 leading-relaxed">
                                     <p className="text-lg">
-                                        <span className="font-bold text-blue-950">AVANZA</span> nació en 2009 con una visión clara: democratizar el acceso a soluciones financieras e inmobiliarias en Honduras. Fundada por un equipo de profesionales con amplia experiencia en el sector, nuestra empresa se estableció con el compromiso de ofrecer servicios accesibles, transparentes y eficientes.
+                                        <span className="font-bold text-blue-950">AVANZA</span> nació en 2003 con una visión clara: democratizar el acceso a soluciones financieras e inmobiliarias en Honduras. Fundada por un equipo de profesionales con amplia experiencia en el sector, nuestra empresa se estableció con el compromiso de ofrecer servicios accesibles, transparentes y eficientes.
                                     </p>
                                     <p className="text-lg">
                                         A lo largo de más de 20 años, hemos crecido de manera constante, ganándonos la confianza de miles de familias y empresas hondureñas. Nuestra trayectoria está marcada por la innovación continua y el compromiso inquebrantable con nuestros clientes.
@@ -266,7 +183,7 @@ const NosotrosPage = () => {
                                 <div className="mt-8 flex gap-4">
                                     <div className="flex items-center gap-2 text-blue-950 font-semibold">
                                         <CheckCircle className="h-5 w-5 text-emerald-600" />
-                                        <span>Establecidos en 2009</span>
+                                        <span>Establecidos en 2003</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-blue-950 font-semibold">
                                         <CheckCircle className="h-5 w-5 text-emerald-600" />

@@ -16,10 +16,8 @@ import {
     Award
 } from "lucide-react";
 import MetropolisImg from "@/assets/img/metro.jpg";
-import MoneyImg from "@/assets/img/money2.jpg";
-import HomeImg from "@/assets/img/home4.jpg";
-import HomeCard from "@/assets/img/house.jpg";
-import MoneyCard from "@/assets/img/money4.jpeg";
+import MoneyImg from "@/assets/img/money4.jpeg";
+import HomeImg from "@/assets/img/house.jpg";
 import { useState, useEffect } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
 
@@ -200,7 +198,7 @@ const PrincipalComponent = () => {
                             <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-avanza-gold/30 hover:border-avanza-gold overflow-hidden md:col-span-2 lg:col-span-1 scroll-reveal-left">
                                 <div className="absolute inset-0 image-overlay">
                                     <img
-                                        src={MoneyCard}
+                                        src={MoneyImg}
                                         alt="Préstamos"
                                         className="w-full h-full object-cover parallax-image"
                                     />
@@ -250,7 +248,7 @@ const PrincipalComponent = () => {
                             <Card className="group hover:shadow-2xl transition-all duration-500 border-2 border-white/30 hover:border-white overflow-hidden scroll-reveal-right">
                                 <div className="absolute inset-0 image-overlay">
                                     <img
-                                        src={HomeCard}
+                                        src={HomeImg}
                                         alt="Bienes Raíces"
                                         className="w-full h-full object-cover parallax-image"
                                     />
@@ -314,6 +312,7 @@ const PrincipalComponent = () => {
                             financiera o inmobiliaria para tus necesidades
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link to="/contacto">
                             <Button
                                 size="lg"
                                 className="md:text-lg px-10 py-6 bg-blue-950 hover:bg-blue-900 text-white font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
@@ -321,6 +320,7 @@ const PrincipalComponent = () => {
                                 <Users className="mr-2 h-5 w-5" />
                                 Hablar con un Asesor
                             </Button>
+                            </Link>
                             <Button
                                 size="lg"
                                 variant="outline"
