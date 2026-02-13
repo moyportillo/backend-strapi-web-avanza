@@ -34,8 +34,8 @@ const Header = () => {
                     <Link to="/nosotros" className="text-foreground/80 hover:text-foreground transition-colors">
                         Nosotros
                     </Link>
-                    <Button variant="outline" size="lg">
-                        <Link to="/contacto" className="text-foreground/80 hover:font-semibold hover:text-foreground transition-colors">
+                    <Button variant="outline" size="lg" className="bg-avanza-gold">
+                        <Link to="/contacto" className="text-avanza-navy hover:font-semibold transition-colors">
                             Contacto
                         </Link>
                     </Button>

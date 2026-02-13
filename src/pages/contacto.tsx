@@ -19,6 +19,7 @@ import {
     ChevronUp
 } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import {Link} from "react-router-dom";
 //import {Link} from "react-router-dom";
 
 const ContactoPage = () => {
@@ -261,7 +262,7 @@ const ContactoPage = () => {
                 >
                     <div className="max-w-6xl mx-auto">
                         <div className="grid lg:grid-cols-2 gap-12">
-                            <div className={`animate-on-scroll-scale ${isVisible.map ? 'visible' : ''}`}>
+                            <div>
                                 <Card className="overflow-hidden border-2 border-blue-950/10 shadow-2xl shadow-gray-800">
                                     <div className="relative h-96 bg-gray-200">
                                         <iframe
@@ -276,6 +277,9 @@ const ContactoPage = () => {
                                         ></iframe>
                                     </div>
                                     <div className="bg-gradient-to-r from-blue-950 to-blue-900 p-6 text-white">
+                                        <a href="https://maps.app.goo.gl/g1P8PbAdmL7hx7C3A" target="_blank"
+                                           rel="noopener noreferrer"
+                                           className="block">
                                         <div className="flex items-start gap-4">
                                             <MapPin className="h-8 w-8 text-avanza-gold flex-shrink-0 mt-1" />
                                             <div>
@@ -287,6 +291,7 @@ const ContactoPage = () => {
                                                 </p>
                                             </div>
                                         </div>
+                                        </a>
                                     </div>
                                 </Card>
                             </div>
