@@ -299,17 +299,12 @@ const PrestamosPage = () => {
 
                                         <CardContent className="pt-6 space-y-4">
                                             <div className="flex gap-3">
+                                                <a href="https://wa.me/50488203559?text=">
                                                 <Button className="flex-1 bg-blue-950 hover:bg-blue-900 text-white font-semibold group-hover:bg-avanza-gold group-hover:text-white transition-all duration-300 shadow-lg">
                                                     <Send className="mr-2 h-4 w-4" />
                                                     Solicitar
                                                 </Button>
-                                                <Button
-                                                    variant="outline"
-                                                    className="flex-1 border-2 border-blue-950/30 text-blue-950 hover:border-blue-950 hover:bg-blue-950/5 font-semibold transition-all duration-300"
-                                                >
-                                                    <Info className="mr-2 h-4 w-4" />
-                                                    Más Info
-                                                </Button>
+                                                </a>
                                             </div>
                                         </CardContent>
                                     </Card>
