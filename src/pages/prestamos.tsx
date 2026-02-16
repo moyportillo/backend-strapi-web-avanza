@@ -4,13 +4,11 @@ import {
     Shield,
     Home,
     MapPin,
-    Car,
     CheckCircle,
     FileText,
     CreditCard,
     Receipt,
     Handshake,
-    Info,
     Send,
     ArrowRight,
 } from "lucide-react"
@@ -18,6 +16,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 import ElegirnosComponent from "@/pages/elegirnos";
 import {Link} from "react-router-dom";
+import buildWhatsAppUrl from "@/pages/utils";
 
 type LoanType = {
     id: number
@@ -297,9 +296,12 @@ const PrestamosPage = () => {
                                             </CardDescription>
                                         </CardHeader>
 
-                                        <CardContent className="pt-6 space-y-4">
-                                            <div className="flex gap-3">
-                                                <a href="https://wa.me/50488203559?text=">
+                                        <CardContent className="justify-center space-y-4">
+                                            <div>
+                                                <a href={buildWhatsAppUrl(loan.title)}
+                                                   target="_blank"
+                                                   rel="noopener noreferrer"
+                                                   className="block">
                                                 <Button className="flex-1 bg-blue-950 hover:bg-blue-900 text-white font-semibold group-hover:bg-avanza-gold group-hover:text-white transition-all duration-300 shadow-lg">
                                                     <Send className="mr-2 h-4 w-4" />
                                                     Solicitar

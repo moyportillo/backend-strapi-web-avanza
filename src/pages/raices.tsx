@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import ElegirnosBienes from "@/pages/elegirnos-bienes";
+import buildWhatsAppUrl from "@/pages/utils";
 
 type Property = {
     id: number
@@ -271,12 +272,14 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                         <Button className="flex-1 bg-blue-950 hover:bg-blue-900 text-white font-semibold">
                             Ver Detalles
                         </Button>
+                        <a href={buildWhatsAppUrl(property.title)}>
                         <Button
                             variant="outline"
                             className="flex-1 border-2 border-avanza-gold text-blue-950 hover:bg-avanza-gold hover:text-blue-950 font-semibold"
                         >
                             Contactar
                         </Button>
+                        </a>
                     </div>
                 </CardContent>
             </Card>
