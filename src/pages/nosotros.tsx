@@ -19,6 +19,7 @@ import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import HoverImg from "@/assets/img/metropolis.jpeg"
 import LogoImg from "@/assets/img/logo-full.png"
+import PermisoImg from "@/assets/img/permiso.png"
 
 const NosotrosPage = () => {
     const [isVisible, setIsVisible] = useState({
@@ -305,11 +306,82 @@ const NosotrosPage = () => {
                     </div>
                 </section>
 
+                {/* Permisos de Operación Section */}
+                <section className="py-20 px-4 bg-gray-50">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-12">
+                            <div className="flex items-center justify-center gap-3 mb-4">
+                                <Shield className="h-10 w-10 text-avanza-gold" />
+                                <h2 className="text-4xl md:text-5xl font-bold text-blue-950 hero-title">
+                                    Operamos con Respaldo
+                                </h2>
+                            </div>
+                            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
+                                Contamos con todos los permisos y licencias requeridos por las autoridades reguladoras de Honduras
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            {/* Imagen del permiso */}
+                            <div className="relative group">
+                                <div className="relative bg-white rounded-2xl p-4 hover:border-avanza-gold/50 transition-all duration-300">
+                                    <img
+                                        src={PermisoImg}
+                                        alt="Permiso de Operación AVANZA"
+                                        className="w-full rounded-xl object-contain"
+                                    />
+                                    <div className="absolute top-6 right-6 bg-emerald-500 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1.5 shadow-lg">
+                                        <CheckCircle className="h-4 w-4" />
+                                        Vigente
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Info de respaldo */}
+                            <div className="space-y-6">
+                                <p className="text-lg text-gray-700 leading-relaxed">
+                                    En <span className="font-bold text-blue-950">AVANZA</span> operamos con total transparencia y bajo estricto cumplimiento normativo. Nuestras operaciones están autorizadas y supervisadas por las principales entidades reguladoras del país.
+                                </p>
+
+                                <div className="space-y-4">
+                                    {[
+                                        {
+                                            icon: Shield,
+                                            title: "Banco Central de Honduras (BCH)",
+                                            description: "Autorizados para operar bajo las normativas del sistema financiero nacional."
+                                        },
+                                        {
+                                            icon: CheckCircle,
+                                            title: "CNBS",
+                                            description: "Supervisados por la Comisión Nacional de Bancos y Seguros."
+                                        },
+                                        {
+                                            icon: Award,
+                                            title: "SAR",
+                                            description: "Registrados y al día con el Servicio de Administración de Rentas."
+                                        }
+                                    ].map((item, index) => (
+                                        <div key={index} className="flex items-start gap-4 bg-white p-4 rounded-xl">
+                                            <div className="w-12 h-12 bg-blue-950 rounded-xl flex items-center justify-center flex-shrink-0">
+                                                <item.icon className="h-6 w-6 text-avanza-gold" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-blue-950 mb-1">{item.title}</h4>
+                                                <p className="text-gray-600 text-sm">{item.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Values Section */}
                 <section
                     ref={valuesRef}
                     data-section="values"
-                    className="py-20 px-4 bg-white"
+                    className="py-5 md:py-20 px-4 bg-white"
                 >
                     <div className="max-w-6xl mx-auto">
                         <div className={`text-center mb-16 animate-on-scroll ${isVisible.values ? 'visible' : ''}`}>

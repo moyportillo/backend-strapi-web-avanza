@@ -35,112 +35,36 @@ type Property = {
 const properties: Property[] = [
     {
         id: 1,
-        title: "Casa Moderna en Zona Residencial Premium",
-        price: "L. 450,000",
-        location: "Colonia Del Valle, Tegucigalpa",
-        bedrooms: 3,
-        bathrooms: 2,
-        area: "180 m²",
-        type: "Casa",
-        description: "Hermosa casa con acabados de lujo, amplio jardín y excelente ubicación cerca de escuelas y centros comerciales.",
-        images: [
-            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-            "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-        ],
-    },
-    {
-        id: 2,
-        title: "Casa Familiar con Jardín Amplio",
-        price: "L. 380,000",
+        title: "Casa en renta residencial el trapiche",
+        price: "$ 1,200.00",
         location: "Residencial El Trapiche, Tegucigalpa",
-        bedrooms: 4,
-        bathrooms: 3,
-        area: "220 m²",
-        type: "Casa",
-        description: "Casa espaciosa ideal para familias, con áreas verdes, terraza y garaje para 2 vehículos.",
-        images: [
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-            "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
-            "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-        ],
-    },
-    {
-        id: 3,
-        title: "Casa en Condominio Privado",
-        price: "L. 290,000",
-        location: "Lomas del Guijarro, Tegucigalpa",
         bedrooms: 3,
-        bathrooms: 2,
-        area: "160 m²",
-        type: "Casa",
-        description: "Casa en exclusivo condominio con seguridad 24/7, áreas recreativas y piscina comunitaria.",
-        images: [
-            "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&q=80",
-            "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80",
-            "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=800&q=80",
-        ],
-    },
-    {
-        id: 4,
-        title: "Terreno Residencial con Todos los Servicios",
-        price: "L. 85,000",
-        location: "Valle de Ángeles, Francisco Morazán",
-        area: "500 m²",
-        type: "Terreno",
-        description: "Excelente terreno plano, con todos los servicios básicos disponibles. Ideal para construir la casa de tus sueños.",
-        images: [
-            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-            "https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=800&q=80",
-            "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&q=80",
-        ],
-    },
-    {
-        id: 5,
-        title: "Amplio Terreno Comercial Céntrico",
-        price: "L. 150,000",
-        location: "Boulevard Morazán, Tegucigalpa",
-        area: "800 m²",
-        type: "Terreno",
-        description: "Terreno comercial en ubicación estratégica, perfecto para desarrollo de plaza comercial o edificio de oficinas.",
-        images: [
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-            "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
-            "https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=800&q=80",
-        ],
-    },
-    {
-        id: 6,
-        title: "Casa de Lujo con Vista Panorámica",
-        price: "L.650,000",
-        location: "Las Colinas, Tegucigalpa",
-        bedrooms: 5,
         bathrooms: 4,
-        area: "350 m²",
+        area: "m²",
         type: "Casa",
-        description: "Casa de alto nivel con vistas espectaculares a la ciudad, piscina infinita y acabados de primera calidad.",
+        description: "Casa en renta con tres habitaciones, dos secundarias con clóset y baño privado, principal con walk-in closet y baño. Sala comedor, cocina, baño visitas y parqueo doble.",
         images: [
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-            "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80",
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019490/IMG_5178_szkvjm.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019662/IMG_5177_za8b2b.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019010/IMG_5179_bahojh.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019383/IMG_5189_dzegxo.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019369/IMG_5196_ftfs73.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019344/IMG_5202_m3nqsv.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019571/IMG_5201_brfphx.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019231/IMG_5200_z4n2wx.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019074/IMG_5193_p1ry4z.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019026/IMG_5197_crsodx.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776018998/IMG_5194_mijiuk.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776018896/IMG_5184_jc6aql.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019667/IMG_5195_ke2iys.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019297/IMG_5191_tbi5fu.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776018890/IMG_5185_kz7rq1.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776018874/IMG_5182_beetn1.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776018504/IMG_5188_nfa2jd.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019641/IMG_5190_vipwvi.jpg",
+            "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019682/IMG_5192_n8jpeb.jpg"
         ],
-    },
-    {
-        id: 7,
-        title: "Apartamento en Renta",
-        price: "L. 800/mes",
-        location: "Colonia Palmira, Tegucigalpa",
-        bedrooms: 2,
-        bathrooms: 1,
-        area: "85 m²",
-        type: "Alquiler",
-        description: "Apartamento moderno en excelente ubicación, ideal para profesionales o parejas jóvenes.",
-        images: [
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-        ],
-    },
+    }
 ]
 
 const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: boolean }) => {
@@ -160,11 +84,21 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
     return (
         <div className={`md:animate-on-scroll-scale ${isVisible ? 'visible' : ''}`}>
             <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 hover:border-amber-500/50 h-full">
-                <div className="relative h-64 overflow-hidden bg-blue-950/5">
+                <div className="relative aspect-[4/3] overflow-hidden bg-blue-950/5">
+
+                    {/* Fondo difuminado */}
+                    <img
+                        src={property.images[currentImageIndex]}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover scale-110 blur-lg opacity-60"
+                        aria-hidden="true"
+                    />
+
+                    {/* Imagen principal completa */}
                     <img
                         src={property.images[currentImageIndex]}
                         alt={property.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="relative w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 z-10"
                     />
 
                     {/* Carousel Controls */}
@@ -172,19 +106,19 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                         <>
                             <button
                                 onClick={previousImage}
-                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-blue-950 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-blue-950 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-20"
                             >
                                 <ChevronLeft className="h-5 w-5" />
                             </button>
                             <button
                                 onClick={nextImage}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-blue-950 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-blue-950 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-20"
                             >
                                 <ChevronRight className="h-5 w-5" />
                             </button>
 
                             {/* Image Indicators */}
-                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
                                 {property.images.map((_, index) => (
                                     <div
                                         key={index}
@@ -200,7 +134,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                     )}
 
                     {/* Type Badge */}
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 z-20">
                         <Badge className="bg-blue-950 text-white border-amber-500 border font-semibold">
                             {property.type}
                         </Badge>
@@ -212,7 +146,7 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                             e.stopPropagation()
                             setIsFavorite(!isFavorite)
                         }}
-                        className="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                        className="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all z-20"
                     >
                         <Heart
                             className={`h-5 w-5 transition-colors ${
@@ -268,17 +202,15 @@ const PropertyCard = ({ property, isVisible }: { property: Property; isVisible: 
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3 pt-2">
-                        <Button className="flex-1 bg-blue-950 hover:bg-blue-900 text-white font-semibold">
+                    <div className="flex pt-2">
+                        {/*<Button className="flex-1 bg-blue-950 hover:bg-blue-900 text-white font-semibold" >
                             Ver Detalles
-                        </Button>
-                        <a href={buildWhatsAppUrl(property.title)}>
-                        <Button
-                            variant="outline"
-                            className="flex-1 border-2 border-avanza-gold text-blue-950 hover:bg-avanza-gold hover:text-blue-950 font-semibold"
-                        >
-                            Contactar
-                        </Button>
+                            className="flex-1 item border-2 border-avanza-gold text-blue-950 hover:bg-avanza-gold hover:text-blue-950 font-semibold"
+                        </Button>*/}
+                        <a href={buildWhatsAppUrl(property.title)} className="w-full">
+                            <Button className="w-full bg-blue-950 hover:bg-blue-900 text-white font-semibold">
+                                Contactar
+                            </Button>
                         </a>
                     </div>
                 </CardContent>
