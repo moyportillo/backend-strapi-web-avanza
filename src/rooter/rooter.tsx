@@ -3,6 +3,8 @@ import PrincipalComponent from '@/pages/principal';
 import {createHashRouter, Navigate} from "react-router-dom";
 import BienesRaicesPage from '@/pages/raices';
 import PrestamosPage from '@/pages/prestamos';
+import ContactoPage from "@/pages/contacto";
+import NosotrosPage from "@/pages/nosotros";
 
 export const router = createHashRouter([
     {
@@ -13,6 +15,8 @@ export const router = createHashRouter([
             { path: 'home', element: <PrincipalComponent /> },
             { path: 'bienes-raices', element: <BienesRaicesPage /> },
             { path: 'prestamos', element: <PrestamosPage /> },
+            { path: 'nosotros', element: <NosotrosPage /> },
+            { path: 'contacto', element: <ContactoPage /> },
             { path: '*', element: <Navigate to="home" /> }, // catch-all
         ],
     },

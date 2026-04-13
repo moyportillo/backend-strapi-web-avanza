@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:wght@700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -45,7 +44,316 @@
   color: #888;
 }
 
+     :root {
+         --avanza-navy: #19225b;
+         --avanza-gold: #d4af37;
+         --avanza-green: #059669;
+     }
 
+     body {
+         font-family: 'Inter', sans-serif;
+     }
+
+     .hero-title {
+         font-family: 'Inter', serif;
+     }
+
+     /* Color utilities */
+     .avanza-navy { color: var(--avanza-navy); }
+     .bg-avanza-navy { background-color: var(--avanza-navy); }
+     .border-avanza-gold { border-color: var(--avanza-gold); }
+     .text-avanza-gold { color: var(--avanza-gold); }
+     .bg-avanza-gold { background-color: var(--avanza-gold); }
+     .text-avanza-green { color: var(--avanza-green); }
+     .bg-avanza-green { background-color: var(--avanza-green); }
+
+.from-avanza-gold {
+    --tw-gradient-from: var(--avanza-gold);
+}
+
+.to-avanza-navy {
+    --tw-gradient-to: var(--avanza-navy);
+}
+
+.bg-gradient-avanza {
+    background: linear-gradient(
+            to right,
+            var(--tw-gradient-from),
+            var(--tw-gradient-to)
+    );
+}
+
+
+/* Scroll reveal animations */
+     .scroll-reveal,
+     .animate-on-scroll {
+         opacity: 0;
+         transform: translateY(30px);
+         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+     }
+
+     .scroll-reveal.is-visible,
+     .animate-on-scroll.visible {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     .scroll-reveal-left {
+         opacity: 0;
+         transform: translateX(-80px);
+         transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+     }
+
+     .scroll-reveal-left.is-visible {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+     .scroll-reveal-right {
+         opacity: 0;
+         transform: translateX(80px);
+         transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+     }
+
+     .scroll-reveal-right.is-visible {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+     .scroll-reveal-scale,
+     .animate-on-scroll-scale {
+         opacity: 0;
+         transform: scale(0.95);
+         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+     }
+
+     .scroll-reveal-scale.is-visible,
+     .animate-on-scroll-scale.visible {
+         opacity: 1;
+         transform: scale(1);
+     }
+
+     /* Parallax */
+     .parallax-image {
+         transform: scale(1);
+         transition: transform 0.6s ease-out;
+     }
+
+     .is-visible .parallax-image {
+         transform: scale(1.05);
+     }
+
+     .parallax-image:hover {
+         transform: scale(1.1) !important;
+     }
+
+     /* Image overlay */
+     .image-overlay::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(
+                 135deg,
+                 rgba(30, 58, 138, 0.88) 0%,
+                 rgba(30, 58, 138, 0.75) 40%,
+                 rgba(30, 58, 138, 0.75) 100%
+         );
+         z-index: 1;
+     }
+
+     .image-overlay-content {
+         position: relative;
+         z-index: 2;
+     }
+
+     /* Keyframes */
+     @keyframes fadeIn {
+         from { opacity: 0; }
+         to { opacity: 1; }
+     }
+
+     @keyframes fadeInUp {
+         from { opacity: 0; transform: translateY(30px); }
+         to { opacity: 1; transform: translateY(0); }
+     }
+
+     @keyframes slideInLeft {
+         from { opacity: 0; transform: translateX(-50px); }
+         to { opacity: 1; transform: translateX(0); }
+     }
+
+     @keyframes slideInRight {
+         from { opacity: 0; transform: translateX(50px); }
+         to { opacity: 1; transform: translateX(0); }
+     }
+
+     @keyframes scaleIn {
+         from { opacity: 0; transform: scale(0.95); }
+         to { opacity: 1; transform: scale(1); }
+     }
+
+     @keyframes slideChange {
+         0% { opacity: 0; transform: scale(1.1); }
+         100% { opacity: 1; transform: scale(1); }
+     }
+
+     @keyframes float {
+         0%, 100% { transform: translateY(0px); }
+         50% { transform: translateY(-10px); }
+     }
+
+     @keyframes shimmer {
+         0% { background-position: -1000px 0; }
+         100% { background-position: 1000px 0; }
+     }
+
+     /* Animation utilities */
+     .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+     .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+     .animate-slideInLeft { animation: slideInLeft 0.8s ease-out forwards; }
+     .animate-slideInRight { animation: slideInRight 0.8s ease-out forwards; }
+     .animate-scaleIn { animation: scaleIn 0.6s ease-out forwards; }
+     .animate-slide-change { animation: slideChange 0.8s ease-out; }
+     .animate-float { animation: float 3s ease-in-out infinite; }
+
+     .animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+     .animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+     .animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+     .animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+
+     .shimmer {
+         background: linear-gradient(
+                 to right,
+                 transparent 0%,
+                 rgba(212, 175, 55, 0.3) 50%,
+                 transparent 100%
+         );
+         background-size: 1000px 100%;
+         animation: shimmer 3s infinite;
+     }
+
+     /* Requirement card hover effect */
+     .requirement-card {
+         position: relative;
+         overflow: hidden;
+     }
+
+     .requirement-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+         transition: left 0.5s;
+     }
+
+     .requirement-card:hover::before {
+         left: 100%;
+     }
+
+/* Slide simple con clase visible */
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Glow animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Success animation */
+@keyframes success {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.animate-success {
+    animation: success 0.5s ease-out;
+}
+
+/* Accordion */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.accordion-content.open {
+    max-height: 2000px;
+}
+
+/* Contact card effect */
+.contact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+    );
+    transition: left 0.5s;
+}
+
+.contact-card:hover::before {
+    left: 100%;
+}
+
+/* Pulse slow (no lo tienes) */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Parallax background (no lo tienes) */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 @layer base {
   :root {

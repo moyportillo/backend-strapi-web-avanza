@@ -42,6 +42,10 @@ export default {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				hero: ['Playfair Display', 'serif'],
+			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
