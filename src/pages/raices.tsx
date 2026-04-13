@@ -41,7 +41,7 @@ const properties: Property[] = [
         bedrooms: 3,
         bathrooms: 4,
         area: "m²",
-        type: "Casa",
+        type: "Alquiler",
         description: "Casa en renta con tres habitaciones, dos secundarias con clóset y baño privado, principal con walk-in closet y baño. Sala comedor, cocina, baño visitas y parqueo doble.",
         images: [
             "https://res.cloudinary.com/drns8fj1v/image/upload/q_auto/f_auto/v1776019490/IMG_5178_szkvjm.jpg",
